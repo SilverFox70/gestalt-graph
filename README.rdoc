@@ -8,8 +8,16 @@ This is a very simple app that demonstrates using Devise via the 'devise-neo4j' 
 What you see here is what you get if you follow the sample app instructions at
 https://github.com/neo4jrb/devise-neo4j
 
-Since the instruction over there are super clear and easy to follow I won't bother
-repeating them here.  
+If you rather try to use this repo as a starting point for a project, then:
+* clone or copy the repo <tt>git clone https://github.com/SilverFox70/rails_neo4j_and_devise.git</tt>
+* <tt>bundle</tt>
+* <tt>rake neo4j:install[community-latest]</tt>
+* <tt>rake neo4j:start</tt>
+* <tt>rails s</tt>
+
+Visit <tt>localhost:7474</tt> to see the Neo4j browser/dashboard
+
+Visit <tt>localhost:3000</tt> to test your login/sign up.
 
 As a helpful reminder, to avoid future frustration whenever you are using Neo4j,
 always be sure to also shut down the Neo4j server when you exit out of rails.

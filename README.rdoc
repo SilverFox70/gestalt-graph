@@ -24,6 +24,20 @@ always be sure to also shut down the Neo4j server when you exit out of rails.
 
 <tt>rake neo4j:stop</tt>
 
+=== Building an app from here
+
+Scaffolding is a quick way to generate resources:
+
+<tt>rails g scaffold Post title:string body:string</tt>
+
+This will scaffold the resource the same way as any Rails application except
+that the models will be <b>ActiveNode</b> models, not <b>ActiveRecord</b> models.
+
+class Post
+	include Neo4j::ActiveNode
+	property :title, type: String
+	property :body, type: String
+end
 
 
 

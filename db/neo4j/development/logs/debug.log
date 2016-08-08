@@ -379,3 +379,13 @@ BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.Thre
 2016-08-08 21:17:00.240+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
 2016-08-08 21:17:30.147+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :User(uuid) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
 2016-08-08 21:17:40.147+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :User(email) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2016-08-08 21:22:00.320+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [23]:  Starting check pointing...
+2016-08-08 21:22:00.320+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [23]:  Starting store flush...
+2016-08-08 21:22:00.334+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 23 to [/Users/william.brinkert/Desktop/Code/rails_with_neo4j_and_devise/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/rails_with_neo4j_and_devise/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-08 21:22:00.337+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 23 to [/Users/william.brinkert/Desktop/Code/rails_with_neo4j_and_devise/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/rails_with_neo4j_and_devise/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-08 21:22:00.339+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [23]:  Store flush completed
+2016-08-08 21:22:00.339+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [23]:  Starting appending check point entry into the tx log...
+2016-08-08 21:22:00.340+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [23]:  Appending check point entry into the tx log completed
+2016-08-08 21:22:00.340+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [23]:  Check pointing completed
+2016-08-08 21:22:00.340+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-08 21:22:00.340+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.

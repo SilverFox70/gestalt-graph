@@ -1,27 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version 2.3.1
+Rails version 4.2.6
+Neo4j - community latest is accessed
 
-Things you may want to cover:
+This is a very simple app that demonstrates using Devise via the 'devise-neo4j' gem.
+What you see here is what you get if you follow the sample app instructions at
+https://github.com/neo4jrb/devise-neo4j
 
-* Ruby version
+As a helpful reminder, to avoid future frustration whenever you are using Neo4j,
+always be sure to also shut down the Neo4j server when you exit out of rails.
 
-* System dependencies
+<tt>rake neo4j:stop</tt>
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run

@@ -33,11 +33,15 @@ Scaffolding is a quick way to generate resources:
 This will scaffold the resource the same way as any Rails application except
 that the models will be <b>ActiveNode</b> models, not <b>ActiveRecord</b> models.
 
-class Post
+<tt>class Post
+
 	include Neo4j::ActiveNode
+
 	property :title, type: String
+
 	property :body, type: String
-end
+	
+end</tt>
 
 
 

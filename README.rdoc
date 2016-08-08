@@ -1,12 +1,15 @@
 == README
 
-Ruby version 2.3.1
-Rails version 4.2.6
-Neo4j - community latest is accessed
+* Ruby version 2.3.1
+* Rails version 4.2.6
+* Neo4j - community latest is accessed
 
 This is a very simple app that demonstrates using Devise via the 'devise-neo4j' gem.
 What you see here is what you get if you follow the sample app instructions at
 https://github.com/neo4jrb/devise-neo4j
+
+Since the instruction over there are super clear and easy to follow I won't bother
+repeating them here.  
 
 As a helpful reminder, to avoid future frustration whenever you are using Neo4j,
 always be sure to also shut down the Neo4j server when you exit out of rails.

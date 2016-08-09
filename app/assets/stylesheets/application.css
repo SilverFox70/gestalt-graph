@@ -17,3 +17,7 @@
 body {
 	padding-top: 70px;
 }
+
+.alert-alert {
+  color: red;
+}

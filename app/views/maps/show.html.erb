@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @map.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @map.author.username %>
+</p>
+
+<p>
+  <strong>Nodes:</strong>
+  <%= @map.nodes %>
+</p>
+
+<%= link_to 'Back', maps_path, class:"btn btn-default" %> |
+<%= link_to 'Edit', edit_map_path(@map), class:"btn btn-default" %> 

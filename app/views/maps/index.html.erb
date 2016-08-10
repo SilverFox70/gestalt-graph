@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+  <div class="panel panel-default">
+
+    <div class="panel-heading"><h3>Listing Maps</h3></div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Nodes</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @maps.each do |map| %>
+          <tr>
+            <td><%= map.title %></td>
+            <td><%= map.author.try(:username) %></td>
+            <td><span class="badge"><%= map.nodes.count %></span></td>
+            <td><%= link_to 'Show', map %></td>
+            <td><%= link_to 'Edit', edit_map_path(map) %></td>
+            <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table><!-- /.table -->
+
+  </div><!-- /.panel -->
+
+<br>
+
+<%= link_to 'New Map', new_map_path, class:"btn btn-default" %>

@@ -10,6 +10,8 @@ class MapsController < ApplicationController
   # GET /maps/1
   # GET /maps/1.json
   def show
+    @map = Map.find(params[:id])
+    render "nodes/index"
   end
 
   # GET /maps/new

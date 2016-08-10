@@ -14,7 +14,9 @@ class NodesController < ApplicationController
 
   # GET /nodes/new
   def new
+    @map = Map.find(params[:map_id])
     @node = Node.new
+    @categories = Category.all
   end
 
   # GET /nodes/1/edit

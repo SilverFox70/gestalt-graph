@@ -28,12 +28,12 @@
         <%= f.label :map %><br>
         <%= f.text_field :map_id %>
       </div>
-
+    
       <div class="field">
         <%= f.label :category %><br>
-        <%= f.select :category_ids, options_from_collection_for_select(Category.order(:kind),
+        <%= f.select :category_ids, options_from_collection_for_select(@node.map.categories.order(:kind),
         :id, :kind, @node.categories.map(&:id)), {include_blank: true},
-        {multiple: true, size: Category.count+1} %>
+        {multiple: true, size: @node.map.categories.count+1} %>
       </div>
 
       

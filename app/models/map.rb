@@ -6,5 +6,8 @@ class Map
   has_many :out, :nodes, type: :HAS_NODES
   has_many :out, :categories, type: :HAS_CATEGORY
 
+  def self.categories
+  	Category.find(map.category_ids)
+  end
 
 end

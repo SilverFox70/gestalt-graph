@@ -1901,3 +1901,675 @@ BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.Thre
 2016-08-10 21:23:45.376+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
 2016-08-10 21:24:57.994+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
 2016-08-10 21:24:57.996+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:09:21.591+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] No locking implementation specified, defaulting to 'community'
+2016-08-11 16:09:21.671+0000 INFO  [o.n.k.AvailabilityGuard] Requirement makes database unavailable: Database available
+2016-08-11 16:09:21.688+0000 INFO  [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2016-08-11 16:09:21.688+0000 INFO  [o.n.k.i.DiagnosticsManager] Neo4j Kernel properties:
+2016-08-11 16:09:21.688+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.http.enabled=true
+2016-08-11 16:09:21.688+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.security.auth_enabled=false
+2016-08-11 16:09:21.688+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.type=BOLT
+2016-08-11 16:09:21.688+0000 INFO  [o.n.k.i.DiagnosticsManager] unsupported.dbms.directories.neo4j_home=/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.directories.import=import
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.tls_level=OPTIONAL
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.shell.enabled=true
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.https.address=localhost:7473
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.https.enabled=false
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.http.type=HTTP
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.https.encryption=TLS
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.https.type=HTTP
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] unsupported.dbms.security.auth_store.location=data/dbms/auth
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] unsupported.dbms.edition=community
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.address=localhost:7472
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.http.address=localhost:7474
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.enabled=true
+2016-08-11 16:09:21.689+0000 INFO  [o.n.k.i.DiagnosticsManager] Diagnostics providers:
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.info.DiagnosticsManager
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] SYSTEM_MEMORY
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] JAVA_MEMORY
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] OPERATING_SYSTEM
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] CLASSPATH
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] LIBRARY_PATH
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] SYSTEM_PROPERTIES
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] NETWORK
+2016-08-11 16:09:21.690+0000 INFO  [o.n.k.i.DiagnosticsManager] System memory information:
+2016-08-11 16:09:21.692+0000 INFO  [o.n.k.i.DiagnosticsManager] Total Physical memory: 16.00 GB
+2016-08-11 16:09:21.693+0000 INFO  [o.n.k.i.DiagnosticsManager] Free Physical memory: 7.79 GB
+2016-08-11 16:09:21.693+0000 INFO  [o.n.k.i.DiagnosticsManager] Committed virtual memory: 7.95 GB
+2016-08-11 16:09:21.693+0000 INFO  [o.n.k.i.DiagnosticsManager] Total swap space: 5.00 GB
+2016-08-11 16:09:21.694+0000 INFO  [o.n.k.i.DiagnosticsManager] Free swap space: 1.47 GB
+2016-08-11 16:09:21.694+0000 INFO  [o.n.k.i.DiagnosticsManager] JVM memory information:
+2016-08-11 16:09:21.694+0000 INFO  [o.n.k.i.DiagnosticsManager] Free  memory: 194.71 MB
+2016-08-11 16:09:21.694+0000 INFO  [o.n.k.i.DiagnosticsManager] Total memory: 256.00 MB
+2016-08-11 16:09:21.694+0000 INFO  [o.n.k.i.DiagnosticsManager] Max   memory: 4.00 GB
+2016-08-11 16:09:21.698+0000 INFO  [o.n.k.i.DiagnosticsManager] Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space]
+2016-08-11 16:09:21.698+0000 INFO  [o.n.k.i.DiagnosticsManager] Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+2016-08-11 16:09:21.699+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Code Cache (Non-heap memory): committed=3.56 MB, used=3.54 MB, max=240.00 MB, threshold=0.00 B
+2016-08-11 16:09:21.699+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=10.50 MB, used=9.99 MB, max=-1.00 B, threshold=0.00 B
+2016-08-11 16:09:21.700+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=1.50 MB, used=1.29 MB, max=1.00 GB, threshold=0.00 B
+2016-08-11 16:09:21.700+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: G1 Eden Space (Heap memory): committed=11.00 MB, used=8.00 MB, max=-1.00 B, threshold=?
+2016-08-11 16:09:21.700+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: G1 Survivor Space (Heap memory): committed=2.00 MB, used=2.00 MB, max=-1.00 B, threshold=?
+2016-08-11 16:09:21.700+0000 INFO  [o.n.k.i.DiagnosticsManager] Memory Pool: G1 Old Gen (Heap memory): committed=243.00 MB, used=50.50 MB, max=4.00 GB, threshold=0.00 B
+2016-08-11 16:09:21.700+0000 INFO  [o.n.k.i.DiagnosticsManager] Operating system information:
+2016-08-11 16:09:21.701+0000 INFO  [o.n.k.i.DiagnosticsManager] Operating System: Mac OS X; version: 10.11.5; arch: x86_64; cpus: 8
+2016-08-11 16:09:21.701+0000 INFO  [o.n.k.i.DiagnosticsManager] Max number of file descriptors: 10240
+2016-08-11 16:09:21.701+0000 INFO  [o.n.k.i.DiagnosticsManager] Number of open file descriptors: 88
+2016-08-11 16:09:21.714+0000 INFO  [o.n.k.i.DiagnosticsManager] Process id: 9662@SFM3LRG8WML
+2016-08-11 16:09:21.714+0000 INFO  [o.n.k.i.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2016-08-11 16:09:21.715+0000 INFO  [o.n.k.i.DiagnosticsManager] Local timezone: US/Pacific
+2016-08-11 16:09:21.715+0000 INFO  [o.n.k.i.DiagnosticsManager] JVM information:
+2016-08-11 16:09:21.715+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2016-08-11 16:09:21.715+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Vendor: Oracle Corporation
+2016-08-11 16:09:21.715+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Version: 25.92-b14
+2016-08-11 16:09:21.715+0000 INFO  [o.n.k.i.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2016-08-11 16:09:21.716+0000 INFO  [o.n.k.i.DiagnosticsManager] VM Arguments: [-XX:+UseG1GC, -XX:-OmitStackTraceInFastThrow, -XX:hashCode=5, -XX:+AlwaysPreTouch, -XX:+UnlockExperimentalVMOptions, -XX:+TrustFinalNonStaticFields, -XX:+DisableExplicitGC, -Dunsupported.dbms.udc.source=tarball, -Dfile.encoding=UTF-8]
+2016-08-11 16:09:21.716+0000 INFO  [o.n.k.i.DiagnosticsManager] Java classpath:
+2016-08-11 16:09:21.717+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/conf/
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-lucene-index-3.0.4.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/server-api-3.0.4.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-servlet-9.2.9.v20150224.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jline-2.12.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/concurrentlinkedhashmap-lru-1.4.2.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-configuration-1.10.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-bolt-3.0.4.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-csv-3.0.4.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/opencsv-2.3.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-security-3.0.4.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-lang-2.6.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/lucene-queryparser-5.5.0.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-graphdb-api-3.0.4.jar
+2016-08-11 16:09:21.718+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/mimepull-1.9.3.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-consistency-check-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/sunec.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/cldrdata.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-cypher-frontend-3.0-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-webapp-9.2.9.v20150224.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-command-line-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-udc-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/classes
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-jmx-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-primitive-collections-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/jce.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-cypher-frontend-2.3-2.3.5.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/parboiled-core-1.1.7.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-util-9.2.9.v20150224.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-dbms-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/zipfs.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-resource-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-cypher-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-shell-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-beanutils-1.8.3.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jersey-servlet-1.19.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-server-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jackson-core-asl-1.9.13.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/plugins/*
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/lucene-core-5.5.0.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/System/Library/Java/Extensions/MRJToolkit.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-import-tool-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/parboiled-scala_2.11-1.1.7.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/rt.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jersey-core-1.19.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-common-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-codegen-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-collections-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/netty-all-4.0.28.Final.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/jsse.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/resources.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jackson-mapper-asl-1.9.13.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jersey-multipart-1.19.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-io-3.0.4.jar
+2016-08-11 16:09:21.719+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-browser-1.1.8.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-cypher-compiler-2.3-2.3.5.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/nashorn.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/lucene-codecs-5.5.0.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/jaccess.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/javax.servlet-api-3.1.0.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-xml-9.2.9.v20150224.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jackson-jaxrs-1.9.13.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-io-2.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/dnsns.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/sunrsasign.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-digester-2.1.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/plugins
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-graph-algo-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/bcprov-jdk15on-1.53.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-kernel-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/asm-5.0.2.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/localedata.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-unsafe-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-cypher-compiler-3.0-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/jfr.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/scala-reflect-2.11.8.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [bootstrap] /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/charsets.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-security-9.2.9.v20150224.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-server-9.2.9.v20150224.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/scala-library-2.11.8.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-graph-matching-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/lucene-analyzers-common-5.5.0.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-logging-1.1.1.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/rhino-1.7R4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/jfxrt.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-io-9.2.9.v20150224.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jsr311-api-1.1.2.r612.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jersey-server-1.19.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/jetty-http-9.2.9.v20150224.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/commons-lang3-3.3.2.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-logging-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [loader.1] file:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/bcpkix-jdk15on-1.53.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager]  [classpath + loader.0] file:/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/lib/neo4j-lucene-upgrade-3.0.4.jar
+2016-08-11 16:09:21.720+0000 INFO  [o.n.k.i.DiagnosticsManager] Library path:
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] /Users/william.brinkert/Library/Java/Extensions
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] /Library/Java/Extensions
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] /Network/Library/Java/Extensions
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] /System/Library/Java/Extensions
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] /usr/lib/java
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] /Users/william.brinkert/Desktop/Code/Gestalt-Graph
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] System.properties:
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] gopherProxySet = false
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] path.separator = :
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] file.encoding.pkg = sun.io
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] user.country = US
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.java.launcher = SUN_STANDARD
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.os.patch.level = unknown
+2016-08-11 16:09:21.721+0000 INFO  [o.n.k.i.DiagnosticsManager] user.dir = /Users/william.brinkert/Desktop/Code/Gestalt-Graph
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.jnu.encoding = UTF-8
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] unsupported.dbms.udc.source = tarball
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] user.home = /Users/william.brinkert
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] user.timezone = US/Pacific
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] file.encoding = UTF-8
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] user.name = william.brinkert
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.java.command = org.neo4j.server.CommunityEntryPoint --home-dir=/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development --config-dir=/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/conf
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.arch.data.model = 64
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] user.language = en
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] awt.toolkit = sun.lwawt.macosx.LWCToolkit
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] file.separator = /
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.io.unicode.encoding = UnicodeBig
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.cpu.endian = little
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] sun.cpu.isalist = 
+2016-08-11 16:09:21.722+0000 INFO  [o.n.k.i.DiagnosticsManager] Network information:
+2016-08-11 16:09:21.725+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface awdl0:
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:6c8a:4eff:fe52:6cf7%awdl0
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface en0:
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:f65c:89ff:feca:a5b9%en0
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 10.16.244.36
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager] Interface lo0:
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:0:0:0:1%lo0
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager]     address: 127.0.0.1
+2016-08-11 16:09:21.726+0000 INFO  [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2016-08-11 16:09:22.180+0000 INFO  [o.n.b.v.r.Sessions] Bolt Server extension loaded.
+2016-08-11 16:09:22.181+0000 INFO  [o.n.b.v.r.Sessions] Bolt enabled on localhost:7472.
+2016-08-11 16:09:22.319+0000 INFO  [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_0[v0.A.7] record format from store /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db
+2016-08-11 16:09:22.348+0000 INFO  [o.n.k.i.s.f.RecordFormatSelector] Format not configured. Selected format from the store: RecordFormat:StandardV3_0[v0.A.7]
+2016-08-11 16:09:22.906+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 1 on :label[0](property[0]) is ONLINE
+2016-08-11 16:09:22.941+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 3 on :label[0](property[1]) is ONLINE
+2016-08-11 16:09:22.975+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 4 on :label[0](property[2]) is ONLINE
+2016-08-11 16:09:23.004+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 5 on :label[0](property[3]) is ONLINE
+2016-08-11 16:09:23.031+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 6 on :label[0](property[4]) is ONLINE
+2016-08-11 16:09:23.065+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 7 on :label[1](property[0]) is ONLINE
+2016-08-11 16:09:23.094+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.init: index 9 on :label[2](property[0]) is ONLINE
+2016-08-11 16:09:23.150+0000 INFO  [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.nodestore.db.labels] ...
+2016-08-11 16:09:23.153+0000 INFO  [o.n.k.i.s.DynamicArrayStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.nodestore.db.labels] high id=1 (defragged=0)
+2016-08-11 16:09:23.153+0000 INFO  [o.n.k.i.s.DynamicArrayStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.nodestore.db.labels rebuild id generator, highId=1 defragged count=0
+2016-08-11 16:09:23.153+0000 INFO  [o.n.k.i.s.NodeStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.nodestore.db] ...
+2016-08-11 16:09:23.155+0000 INFO  [o.n.k.i.s.NodeStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.nodestore.db] high id=3 (defragged=0)
+2016-08-11 16:09:23.155+0000 INFO  [o.n.k.i.s.NodeStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.nodestore.db rebuild id generator, highId=3 defragged count=0
+2016-08-11 16:09:23.155+0000 INFO  [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.index.keys] ...
+2016-08-11 16:09:23.156+0000 INFO  [o.n.k.i.s.DynamicStringStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.index.keys] high id=16 (defragged=0)
+2016-08-11 16:09:23.156+0000 INFO  [o.n.k.i.s.DynamicStringStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.index.keys rebuild id generator, highId=16 defragged count=0
+2016-08-11 16:09:23.156+0000 INFO  [o.n.k.i.s.PropertyKeyTokenStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.index] ...
+2016-08-11 16:09:23.157+0000 INFO  [o.n.k.i.s.PropertyKeyTokenStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.index] high id=15 (defragged=0)
+2016-08-11 16:09:23.157+0000 INFO  [o.n.k.i.s.PropertyKeyTokenStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.index rebuild id generator, highId=15 defragged count=0
+2016-08-11 16:09:23.159+0000 INFO  [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.strings] ...
+2016-08-11 16:09:23.160+0000 INFO  [o.n.k.i.s.DynamicStringStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.strings] high id=3 (defragged=0)
+2016-08-11 16:09:23.160+0000 INFO  [o.n.k.i.s.DynamicStringStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.strings rebuild id generator, highId=3 defragged count=0
+2016-08-11 16:09:23.160+0000 INFO  [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.arrays] ...
+2016-08-11 16:09:23.161+0000 INFO  [o.n.k.i.s.DynamicArrayStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.arrays] high id=1 (defragged=0)
+2016-08-11 16:09:23.161+0000 INFO  [o.n.k.i.s.DynamicArrayStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db.arrays rebuild id generator, highId=1 defragged count=0
+2016-08-11 16:09:23.161+0000 INFO  [o.n.k.i.s.PropertyStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db] ...
+2016-08-11 16:09:23.162+0000 INFO  [o.n.k.i.s.PropertyStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db] high id=11 (defragged=0)
+2016-08-11 16:09:23.162+0000 INFO  [o.n.k.i.s.PropertyStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.propertystore.db rebuild id generator, highId=11 defragged count=0
+2016-08-11 16:09:23.162+0000 INFO  [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.relationshiptypestore.db.names] ...
+2016-08-11 16:09:23.164+0000 INFO  [o.n.k.i.s.DynamicStringStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.relationshiptypestore.db.names] high id=2 (defragged=0)
+2016-08-11 16:09:23.164+0000 INFO  [o.n.k.i.s.DynamicStringStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.relationshiptypestore.db.names rebuild id generator, highId=2 defragged count=0
+2016-08-11 16:09:23.164+0000 INFO  [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.labeltokenstore.db.names] ...
+2016-08-11 16:09:23.165+0000 INFO  [o.n.k.i.s.DynamicStringStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.labeltokenstore.db.names] high id=4 (defragged=0)
+2016-08-11 16:09:23.165+0000 INFO  [o.n.k.i.s.DynamicStringStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.labeltokenstore.db.names rebuild id generator, highId=4 defragged count=0
+2016-08-11 16:09:23.165+0000 INFO  [o.n.k.i.s.SchemaStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.schemastore.db] ...
+2016-08-11 16:09:23.166+0000 INFO  [o.n.k.i.s.SchemaStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.schemastore.db] high id=11 (defragged=0)
+2016-08-11 16:09:23.166+0000 INFO  [o.n.k.i.s.SchemaStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.schemastore.db rebuild id generator, highId=11 defragged count=0
+2016-08-11 16:09:23.166+0000 INFO  [o.n.k.i.s.RelationshipGroupStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.relationshipgroupstore.db] ...
+2016-08-11 16:09:23.167+0000 INFO  [o.n.k.i.s.RelationshipGroupStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.relationshipgroupstore.db] high id=1 (defragged=0)
+2016-08-11 16:09:23.167+0000 INFO  [o.n.k.i.s.RelationshipGroupStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.relationshipgroupstore.db rebuild id generator, highId=1 defragged count=0
+2016-08-11 16:09:23.167+0000 INFO  [o.n.k.i.s.MetaDataStore] Rebuilding id generator for[/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore] ...
+2016-08-11 16:09:23.168+0000 INFO  [o.n.k.i.s.MetaDataStore] [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore] high id=15 (defragged=0)
+2016-08-11 16:09:23.168+0000 INFO  [o.n.k.i.s.MetaDataStore] /Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore rebuild id generator, highId=15 defragged count=0
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 1 on :User(uuid) is ONLINE
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 3 on :User(facebook_token) is ONLINE
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 4 on :User(email) is ONLINE
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 5 on :User(remember_token) is ONLINE
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 6 on :User(reset_password_token) is ONLINE
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 7 on :Map(uuid) is ONLINE
+2016-08-11 16:09:23.172+0000 INFO  [o.n.k.i.a.i.IndexingService] IndexingService.start: index 9 on :Node(uuid) is ONLINE
+2016-08-11 16:09:23.174+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :User(facebook_token)
+2016-08-11 16:09:23.180+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :User(facebook_token) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2016-08-11 16:09:23.181+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :User(remember_token)
+2016-08-11 16:09:23.181+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :User(remember_token) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2016-08-11 16:09:23.181+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :User(reset_password_token)
+2016-08-11 16:09:23.181+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :User(reset_password_token) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2016-08-11 16:09:23.181+0000 WARN  [o.n.k.i.a.i.s.IndexSamplingController] Recovering index sampling for index :Node(uuid)
+2016-08-11 16:09:23.182+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 0 unique values in sample of avg size 0 taken from index containing 0 entries
+2016-08-11 16:09:23.184+0000 INFO  [o.n.k.i.DatabaseHealth] Database health set to OK
+2016-08-11 16:09:23.513+0000 INFO  [o.n.k.AvailabilityGuard] Fulfilling of requirement makes database available: Database available
+2016-08-11 16:09:23.513+0000 INFO  [o.n.k.i.f.CommunityFacadeFactory] Database is now ready
+2016-08-11 16:09:23.514+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2016-08-11 16:09:23.514+0000 INFO  [o.n.k.i.DiagnosticsManager] Graph Database: community single StoreId{creationTime=1470690719853, randomId=1578536595935396759, storeVersion=15531981201765894, upgradeTime=1470690719853, upgradeId=1}
+2016-08-11 16:09:23.514+0000 INFO  [o.n.k.i.DiagnosticsManager] Kernel version: 3.0.4,3779eb4
+2016-08-11 16:09:23.514+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager] Store versions:
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager] Store versions:
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   NodeStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyIndexStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyStore v0.A.7
+2016-08-11 16:09:23.515+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipTypeStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   LabelTokenStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   SchemaStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipGroupStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   NeoStore v0.A.7
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager] Id usage:
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager] Id usage:
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore: used=1 high=0
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   NodeStore: used=3 high=2
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=16 high=15
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyIndexStore: used=15 high=14
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=3 high=2
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore: used=1 high=0
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   PropertyStore: used=11 high=10
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipStore: used=1 high=0
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=2 high=1
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipTypeStore: used=1 high=0
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=4 high=3
+2016-08-11 16:09:23.516+0000 INFO  [o.n.k.i.DiagnosticsManager]   LabelTokenStore: used=4 high=3
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager]   SchemaStore: used=11 high=10
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager]   RelationshipGroupStore: used=1 high=0
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager]   NeoStore: used=15 high=14
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager] Neostore records:
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager] TIME (Creation time): 1470690719853
+2016-08-11 16:09:23.517+0000 INFO  [o.n.k.i.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 1578536595935396759
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 41
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] STORE_VERSION (Store format version): 15531981201765894
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 38
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1470690719853
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): -162571643933
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 11067
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 1470864219551
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2016-08-11 16:09:23.518+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2016-08-11 16:09:23.519+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2016-08-11 16:09:23.519+0000 INFO  [o.n.k.i.DiagnosticsManager] Transaction log:
+2016-08-11 16:09:23.519+0000 INFO  [o.n.k.i.DiagnosticsManager] Oldest transaction 2 found in log with version 0
+2016-08-11 16:09:23.519+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2016-08-11 16:09:23.520+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2016-08-11 16:09:23.520+0000 INFO  [o.n.k.i.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 999334871040 / 896938913792 / 89
+Storage files: (filename : modification date - size)
+2016-08-11 16:09:23.520+0000 INFO  [o.n.k.i.DiagnosticsManager]   index:
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   - Total: 2016-08-08T16:12:49-0700 - 0.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.counts.db.a: 2016-08-10T14:43:47-0700 - 576.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.counts.db.b: 2016-08-10T14:43:47-0700 - 288.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2016-08-11T09:09:22-0700 - 9.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels: 2016-08-08T15:57:41-0700 - 8.00 kB
+2016-08-11 16:09:23.521+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db: 2016-08-10T14:43:47-0700 - 7.97 kB
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays: 2016-08-08T15:57:41-0700 - 8.00 kB
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings: 2016-08-09T11:28:37-0700 - 8.00 kB
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2016-08-08T15:57:41-0700 - 8.00 kB
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.522+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db: 2016-08-10T14:43:47-0700 - 7.97 kB
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db.id: 2016-08-11T09:09:22-0700 - 9.00 B
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2016-08-11T09:09:22-0700 - 9.00 B
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db: 2016-08-10T14:43:47-0700 - 8.00 kB
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db.id: 2016-08-11T09:09:23-0700 - 9.00 B
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   neostore.transaction.db.0: 2016-08-10T14:43:47-0700 - 10.83 kB
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]   schema:
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]     index:
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]       lucene:
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]         1:
+2016-08-11 16:09:23.523+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             _2.cfe: 2016-08-09T11:28:37-0700 - 305.00 B
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             _2.cfs: 2016-08-09T11:28:37-0700 - 1.33 kB
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             _2.si: 2016-08-09T11:28:37-0700 - 398.00 B
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_c: 2016-08-10T16:18:30-0700 - 150.00 B
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T16:18:30-0700 - 2.16 kB
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-08T15:57:41-0700 - 16.00 kB
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-08T15:57:41-0700 - 18.16 kB
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]         11:
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_1: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.524+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-10T16:18:30-0700 - 0.00 B
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-10T16:18:30-0700 - 16.00 kB
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-10T16:18:30-0700 - 16.08 kB
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]         3:
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_c: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-08T15:57:41-0700 - 16.00 kB
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-08T15:57:41-0700 - 16.08 kB
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]         4:
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.525+0000 INFO  [o.n.k.i.DiagnosticsManager]             _2.cfe: 2016-08-09T11:28:37-0700 - 305.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]             _2.cfs: 2016-08-09T11:28:37-0700 - 1.26 kB
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]             _2.si: 2016-08-09T11:28:37-0700 - 398.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_c: 2016-08-10T16:18:30-0700 - 150.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T16:18:30-0700 - 2.09 kB
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-08T15:57:41-0700 - 16.00 kB
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-08T15:57:41-0700 - 18.09 kB
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]         5:
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_c: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-08T15:57:41-0700 - 16.00 kB
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-08T15:57:41-0700 - 16.08 kB
+2016-08-11 16:09:23.526+0000 INFO  [o.n.k.i.DiagnosticsManager]         6:
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_c: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T16:18:30-0700 - 85.00 B
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-08T15:57:41-0700 - 16.00 kB
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-08T15:57:41-0700 - 16.08 kB
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]         7:
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]             _0.cfe: 2016-08-10T14:43:47-0700 - 305.00 B
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]             _0.cfs: 2016-08-10T14:43:47-0700 - 1.28 kB
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]             _0.si: 2016-08-10T14:43:47-0700 - 361.00 B
+2016-08-11 16:09:23.527+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_3: 2016-08-10T14:43:47-0700 - 150.00 B
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-10T14:43:47-0700 - 0.00 B
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T14:43:47-0700 - 2.07 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-10T14:43:47-0700 - 16.00 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-10T14:43:47-0700 - 18.07 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]         9:
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_3: 2016-08-10T14:43:47-0700 - 85.00 B
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-10T14:43:47-0700 - 0.00 B
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-10T14:43:47-0700 - 85.00 B
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-10T14:43:47-0700 - 16.00 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-10T14:43:47-0700 - 16.08 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]       - Total: 2016-08-10T16:18:30-0700 - 134.74 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]     - Total: 2016-08-08T15:57:41-0700 - 134.74 kB
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]     label:
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]       lucene:
+2016-08-11 16:09:23.528+0000 INFO  [o.n.k.i.DiagnosticsManager]         labelStore:
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]           1:
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]             _3.cfe: 2016-08-11T09:09:00-0700 - 305.00 B
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]             _3.cfs: 2016-08-11T09:09:00-0700 - 2.05 kB
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]             _3.si: 2016-08-11T09:09:00-0700 - 361.00 B
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]             segments_5: 2016-08-11T09:09:00-0700 - 136.00 B
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]             write.lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]           - Total: 2016-08-11T09:09:00-0700 - 2.84 kB
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]           failure-message: 2016-08-08T15:57:41-0700 - 16.00 kB
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]         - Total: 2016-08-08T15:57:41-0700 - 18.84 kB
+2016-08-11 16:09:23.529+0000 INFO  [o.n.k.i.DiagnosticsManager]       - Total: 2016-08-08T15:57:41-0700 - 18.84 kB
+2016-08-11 16:09:23.530+0000 INFO  [o.n.k.i.DiagnosticsManager]     - Total: 2016-08-08T15:57:41-0700 - 18.84 kB
+2016-08-11 16:09:23.530+0000 INFO  [o.n.k.i.DiagnosticsManager]   - Total: 2016-08-08T15:57:41-0700 - 153.58 kB
+2016-08-11 16:09:23.530+0000 INFO  [o.n.k.i.DiagnosticsManager]   store_lock: 2016-08-08T15:57:41-0700 - 0.00 B
+2016-08-11 16:09:23.530+0000 INFO  [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2016-08-11 16:09:24.667+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED START ---
+2016-08-11 16:09:25.408+0000 INFO  [o.n.k.i.DiagnosticsManager] --- SERVER STARTED END ---
+2016-08-11 16:09:39.572+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Category(uuid) [provider: {key=lucene, version=1.0}]]
+2016-08-11 16:09:39.591+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Completed node store scan. Flushing all pending deletes.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@649a3607[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-08-11 16:09:39.591+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Shutting down executor.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@649a3607[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-08-11 16:09:39.608+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Category(uuid) [provider: {key=lucene, version=1.0}]]
+2016-08-11 16:09:39.608+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-08-11 16:09:39.622+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-08-11 16:12:37.539+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:12:37.541+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:12:43.185+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Category(uuid) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2016-08-11 16:12:49.970+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Category`) RETURN n
+2016-08-11 16:12:49.971+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Category`) RETURN n
+2016-08-11 16:12:59.838+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:12:59.840+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:13:03.184+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Category(uuid) with 2 unique values in sample of avg size 2 taken from index containing 2 entries
+2016-08-11 16:14:23.237+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [48]:  Starting check pointing...
+2016-08-11 16:14:23.237+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [48]:  Starting store flush...
+2016-08-11 16:14:23.261+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 48 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 16:14:23.266+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 48 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 16:14:23.270+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [48]:  Store flush completed
+2016-08-11 16:14:23.270+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [48]:  Starting appending check point entry into the tx log...
+2016-08-11 16:14:23.270+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [48]:  Appending check point entry into the tx log completed
+2016-08-11 16:14:23.271+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [48]:  Check pointing completed
+2016-08-11 16:14:23.271+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 16:14:23.271+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 16:17:08.747+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:17:08.749+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:20:33.188+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2016-08-11 16:20:33.344+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [50]:  Starting check pointing...
+2016-08-11 16:20:33.344+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [50]:  Starting store flush...
+2016-08-11 16:20:33.359+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 50 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 16:20:33.361+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 50 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 16:20:33.364+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [50]:  Store flush completed
+2016-08-11 16:20:33.364+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [50]:  Starting appending check point entry into the tx log...
+2016-08-11 16:20:33.364+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [50]:  Appending check point entry into the tx log completed
+2016-08-11 16:20:33.364+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [50]:  Check pointing completed
+2016-08-11 16:20:33.364+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 16:20:33.364+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 16:23:12.584+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:23:12.586+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:48:44.672+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:48:44.673+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:48:53.777+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [51]:  Starting check pointing...
+2016-08-11 16:48:53.777+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [51]:  Starting store flush...
+2016-08-11 16:48:53.789+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 51 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 16:48:53.791+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 51 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 16:48:53.792+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [51]:  Store flush completed
+2016-08-11 16:48:53.792+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [51]:  Starting appending check point entry into the tx log...
+2016-08-11 16:48:53.793+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [51]:  Appending check point entry into the tx log completed
+2016-08-11 16:48:53.793+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [51]:  Check pointing completed
+2016-08-11 16:48:53.793+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 16:48:53.793+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 16:51:04.943+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (previous:`Category`) WHERE (ID(previous) IN {ID_previous}) OPTIONAL MATCH (previous)<-[rel1:`HAS_CATEGORY`]-(next:`Node`) RETURN ID(previous), collect(next)
+2016-08-11 16:51:04.944+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (previous:`Category`) WHERE (ID(previous) IN {ID_previous}) OPTIONAL MATCH (previous)<-[rel1:`HAS_CATEGORY`]-(next:`Node`) RETURN ID(previous), collect(next)
+2016-08-11 16:51:08.094+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (category3) WHERE (ID(category3) = {ID_category3}) MATCH (category3)<-[rel1:`HAS_CATEGORY`]-(result_node:`Node`) RETURN result_node
+2016-08-11 16:51:08.095+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (category3) WHERE (ID(category3) = {ID_category3}) MATCH (category3)<-[rel1:`HAS_CATEGORY`]-(result_node:`Node`) RETURN result_node
+2016-08-11 16:51:12.112+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Node`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:51:12.114+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Node`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:51:12.190+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:51:12.192+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:51:22.547+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (category4) WHERE (ID(category4) = {ID_category4}) MATCH (category4)<-[rel1:`HAS_CATEGORY`]-(result_node:`Node`) RETURN result_node
+2016-08-11 16:51:22.548+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (category4) WHERE (ID(category4) = {ID_category4}) MATCH (category4)<-[rel1:`HAS_CATEGORY`]-(result_node:`Node`) RETURN result_node
+2016-08-11 16:51:27.953+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:51:27.954+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 16:53:53.860+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [54]:  Starting check pointing...
+2016-08-11 16:53:53.860+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [54]:  Starting store flush...
+2016-08-11 16:53:53.870+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 54 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 16:53:53.873+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 54 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 16:53:53.874+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [54]:  Store flush completed
+2016-08-11 16:53:53.874+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [54]:  Starting appending check point entry into the tx log...
+2016-08-11 16:53:53.874+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [54]:  Appending check point entry into the tx log completed
+2016-08-11 16:53:53.874+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [54]:  Check pointing completed
+2016-08-11 16:53:53.874+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 16:53:53.874+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 16:54:59.833+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Map`) WITH n OPTIONAL MATCH (n)<-[:`CREATED`]-(author) WHERE (author:`User`) WITH n, collect(author) AS author_collection OPTIONAL MATCH (n)-[:`HAS_NODES`]->(nodes) WHERE (nodes:`Node`) WITH n, collect(nodes) AS nodes_collection, author_collection RETURN n, [author_collection,nodes_collection]
+2016-08-11 16:54:59.835+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Map`) WITH n OPTIONAL MATCH (n)<-[:`CREATED`]-(author) WHERE (author:`User`) WITH n, collect(author) AS author_collection OPTIONAL MATCH (n)-[:`HAS_NODES`]->(nodes) WHERE (nodes:`Node`) WITH n, collect(nodes) AS nodes_collection, author_collection RETURN n, [author_collection,nodes_collection]
+2016-08-11 16:55:02.010+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (map2) WHERE (ID(map2) = {ID_map2}) MATCH (map2)-[rel1:`HAS_NODES`]->(result_nodes:`Node`) RETURN result_nodes
+2016-08-11 16:55:02.011+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (map2) WHERE (ID(map2) = {ID_map2}) MATCH (map2)-[rel1:`HAS_NODES`]->(result_nodes:`Node`) RETURN result_nodes
+2016-08-11 17:25:47.585+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:25:47.586+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:25:54.402+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [57]:  Starting check pointing...
+2016-08-11 17:25:54.402+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [57]:  Starting store flush...
+2016-08-11 17:25:54.416+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 57 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 17:25:54.419+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 57 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 17:25:54.421+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [57]:  Store flush completed
+2016-08-11 17:25:54.421+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [57]:  Starting appending check point entry into the tx log...
+2016-08-11 17:25:54.421+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [57]:  Appending check point entry into the tx log completed
+2016-08-11 17:25:54.421+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [57]:  Check pointing completed
+2016-08-11 17:25:54.421+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 17:25:54.421+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 17:26:29.262+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (node5) WHERE (ID(node5) = {ID_node5}) MATCH (node5)-[rel1:`HAS_CATEGORY`]->(result_categories:`Category`) DELETE rel1
+2016-08-11 17:26:29.263+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (node5) WHERE (ID(node5) = {ID_node5}) MATCH (node5)-[rel1:`HAS_CATEGORY`]->(result_categories:`Category`) DELETE rel1
+2016-08-11 17:26:29.314+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:26:29.315+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:26:40.205+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:26:40.206+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:27:12.263+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:27:12.264+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:28:56.371+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:28:56.372+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:29:31.803+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:29:31.804+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:30:54.480+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [67]:  Starting check pointing...
+2016-08-11 17:30:54.480+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [67]:  Starting store flush...
+2016-08-11 17:30:54.491+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 67 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 17:30:54.493+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 67 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 17:30:54.494+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [67]:  Store flush completed
+2016-08-11 17:30:54.494+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [67]:  Starting appending check point entry into the tx log...
+2016-08-11 17:30:54.495+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [67]:  Appending check point entry into the tx log completed
+2016-08-11 17:30:54.495+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [67]:  Check pointing completed
+2016-08-11 17:30:54.495+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 17:30:54.495+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 17:32:23.608+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:32:23.609+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:34:16.352+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:34:16.353+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:35:25.734+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:35:25.735+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:35:47.994+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:35:47.995+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:35:54.562+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [75]:  Starting check pointing...
+2016-08-11 17:35:54.562+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [75]:  Starting store flush...
+2016-08-11 17:35:54.573+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 75 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 17:35:54.575+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 75 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [75]:  Store flush completed
+2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [75]:  Starting appending check point entry into the tx log...
+2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [75]:  Appending check point entry into the tx log completed
+2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [75]:  Check pointing completed
+2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 17:37:31.569+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:37:31.570+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:40:54.649+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Starting check pointing...
+2016-08-11 17:40:54.649+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Starting store flush...
+2016-08-11 17:40:54.660+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 79 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 17:40:54.662+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 79 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Store flush completed
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Starting appending check point entry into the tx log...
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Appending check point entry into the tx log completed
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Check pointing completed
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 17:54:03.004+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1625ms.
+2016-08-11 18:06:35.252+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:06:35.253+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:06:40.157+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 2 unique values in sample of avg size 2 taken from index containing 2 entries
+2016-08-11 18:06:43.162+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Starting check pointing...
+2016-08-11 18:06:43.162+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Starting store flush...
+2016-08-11 18:06:43.177+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 80 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 18:06:43.179+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 80 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Store flush completed
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Starting appending check point entry into the tx log...
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Appending check point entry into the tx log completed
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Check pointing completed
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 18:08:55.512+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Map`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:55.513+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Map`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:55.554+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Node`) WHERE (n.uuid = {n_uuid}) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:55.556+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Node`) WHERE (n.uuid = {n_uuid}) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:55.593+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:55.594+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:57.576+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Node`) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:57.577+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Node`) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:57.594+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (map2) WHERE (ID(map2) = {ID_map2}) MATCH (map2)-[rel1:`HAS_NODES`]->(result_nodes:`Node`) RETURN result_nodes
+2016-08-11 18:08:57.595+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (map2) WHERE (ID(map2) = {ID_map2}) MATCH (map2)-[rel1:`HAS_NODES`]->(result_nodes:`Node`) RETURN result_nodes
+2016-08-11 18:09:00.160+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 3 unique values in sample of avg size 3 taken from index containing 3 entries
+2016-08-11 18:11:06.023+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:11:06.024+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:11:16.108+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:11:16.109+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:11:25.994+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:11:25.995+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:11:43.252+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [93]:  Starting check pointing...
+2016-08-11 18:11:43.252+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [93]:  Starting store flush...
+2016-08-11 18:11:43.268+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 93 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 18:11:43.270+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 93 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 18:11:43.272+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [93]:  Store flush completed
+2016-08-11 18:11:43.272+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [93]:  Starting appending check point entry into the tx log...
+2016-08-11 18:11:43.272+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [93]:  Appending check point entry into the tx log completed
+2016-08-11 18:11:43.272+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [93]:  Check pointing completed
+2016-08-11 18:11:43.272+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 18:11:43.272+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 18:14:39.680+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Map`) WITH n OPTIONAL MATCH (n)<-[:`CREATED`]-(author) WHERE (author:`User`) WITH n, collect(author) AS author_collection OPTIONAL MATCH (n)-[:`HAS_NODES`]->(nodes) WHERE (nodes:`Node`) WITH n, collect(nodes) AS nodes_collection, author_collection RETURN n, [author_collection,nodes_collection]
+2016-08-11 18:14:39.682+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Map`) WITH n OPTIONAL MATCH (n)<-[:`CREATED`]-(author) WHERE (author:`User`) WITH n, collect(author) AS author_collection OPTIONAL MATCH (n)-[:`HAS_NODES`]->(nodes) WHERE (nodes:`Node`) WITH n, collect(nodes) AS nodes_collection, author_collection RETURN n, [author_collection,nodes_collection]
+2016-08-11 18:14:56.319+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (node) WHERE (ID(node) IS NULL) MATCH (node)<-[rel1:`HAS_NODES`]-(result_map:`Map`) RETURN result_map
+2016-08-11 18:14:56.320+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (node) WHERE (ID(node) IS NULL) MATCH (node)<-[rel1:`HAS_NODES`]-(result_map:`Map`) RETURN result_map
+2016-08-11 18:14:56.346+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:14:56.346+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:15:00.156+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Map(uuid) with 2 unique values in sample of avg size 2 taken from index containing 2 entries
+2016-08-11 18:15:31.084+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:15:31.085+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:15:33.765+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (node6) WHERE (ID(node6) = {ID_node6}) MATCH (node6)-[rel1:`HAS_CATEGORY`]->(result_categories:`Category`) RETURN result_categories
+2016-08-11 18:15:33.766+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (node6) WHERE (ID(node6) = {ID_node6}) MATCH (node6)-[rel1:`HAS_CATEGORY`]->(result_categories:`Category`) RETURN result_categories
+2016-08-11 18:15:40.159+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 4 unique values in sample of avg size 4 taken from index containing 4 entries
+2016-08-11 18:16:43.363+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [95]:  Starting check pointing...
+2016-08-11 18:16:43.363+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [95]:  Starting store flush...
+2016-08-11 18:16:43.388+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 95 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 18:16:43.391+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 95 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 18:16:43.400+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [95]:  Store flush completed
+2016-08-11 18:16:43.400+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [95]:  Starting appending check point entry into the tx log...
+2016-08-11 18:16:43.401+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [95]:  Appending check point entry into the tx log completed
+2016-08-11 18:16:43.401+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [95]:  Check pointing completed
+2016-08-11 18:16:43.401+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 18:16:43.401+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 18:17:43.958+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (previous:`Node`) WHERE (ID(previous) = {ID_previous}) OPTIONAL MATCH (previous)-[rel1:`HAS_CATEGORY`]->(next:`Category`) RETURN ID(previous), collect(next)
+2016-08-11 18:17:43.959+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (previous:`Node`) WHERE (ID(previous) = {ID_previous}) OPTIONAL MATCH (previous)-[rel1:`HAS_CATEGORY`]->(next:`Category`) RETURN ID(previous), collect(next)
+2016-08-11 18:27:51.499+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Node`) RETURN n
+2016-08-11 18:27:51.499+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Node`) RETURN n
+2016-08-11 18:38:44.412+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (node7) WHERE (ID(node7) = {ID_node7}) MATCH (node7)-[rel1:`HAS_CATEGORY`]->(result_categories:`Category`) RETURN result_categories
+2016-08-11 18:38:44.413+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (node7) WHERE (ID(node7) = {ID_node7}) MATCH (node7)-[rel1:`HAS_CATEGORY`]->(result_categories:`Category`) RETURN result_categories

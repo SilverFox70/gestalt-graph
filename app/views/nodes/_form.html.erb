@@ -18,17 +18,25 @@
         <%= f.label :name %><br>
         <%= f.text_field :name %>
       </div>
+
       <div class="field">
         <%= f.label :description %><br>
         <%= f.text_field :description %>
       </div>
 
       <div class="field">
-        <%= f.label :category %><br>
-        <%= f.select :category_ids, options_from_collection_for_select(Category.order(:name),
-        :id, :name, @node.categories.map(&:id)), {include_blank: true},
-        {multiple: true, size: Category.count} %>
+        <%= f.label :map %><br>
+        <%= f.text_field :map_id %>
       </div>
+
+      <div class="field">
+        <%= f.label :category %><br>
+        <%= f.select :category_ids, options_from_collection_for_select(Category.order(:kind),
+        :id, :kind, @node.categories.map(&:id)), {include_blank: true},
+        {multiple: true, size: Category.count+1} %>
+      </div>
+
+      
 
       <div class="actions">
         <%= f.submit %>

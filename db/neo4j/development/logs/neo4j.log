@@ -112,3 +112,7 @@ Caused by: org.neo4j.kernel.StoreLockException: Store and its lock file has been
 2016-08-10 20:30:53.538+0000 INFO  Bolt enabled on localhost:7472.
 2016-08-10 20:30:55.874+0000 INFO  Started.
 2016-08-10 20:30:56.542+0000 INFO  Remote interface available at http://localhost:7474/
+2016-08-11 16:09:21.423+0000 INFO  Starting...
+2016-08-11 16:09:22.181+0000 INFO  Bolt enabled on localhost:7472.
+2016-08-11 16:09:24.666+0000 INFO  Started.
+2016-08-11 16:09:25.408+0000 INFO  Remote interface available at http://localhost:7474/

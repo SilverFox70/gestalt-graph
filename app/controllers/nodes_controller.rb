@@ -4,7 +4,12 @@ class NodesController < ApplicationController
   # GET /nodes
   # GET /nodes.json
   def index
-    @nodes = Node.all
+    if !params[:map_id]
+      @nodes = Node.all
+      render :master_index
+    else
+      @map = Map.find(params[:map_id])
+    end
   end
 
   # GET /nodes/1
@@ -14,9 +19,7 @@ class NodesController < ApplicationController
 
   # GET /nodes/new
   def new
-    @map = Map.find(params[:map_id])
-    @node = Node.new
-    @categories = Category.all
+    @node = Node.new(map_id: params[:map_id])
   end
 
   # GET /nodes/1/edit
@@ -71,6 +74,6 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:name, :description, :category_id)
+      params.require(:node).permit(:name, :description, :map_id, :category_ids => [])
     end
 end

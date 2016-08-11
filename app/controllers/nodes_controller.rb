@@ -24,6 +24,7 @@ class NodesController < ApplicationController
 
   # GET /nodes/1/edit
   def edit
+    @map = Map.find(@node.map_id)
   end
 
   # POST /nodes
@@ -74,6 +75,6 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:name, :description, :map_id, :category_ids => [])
+      params.require(:node).permit(:name, :description, :map_id, :category_ids => [], :node_ids => [])
     end
 end

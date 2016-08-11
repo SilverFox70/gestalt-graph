@@ -5,6 +5,7 @@ class Node
 
   has_many :out, :categories, type: :HAS_CATEGORY
   has_one :in, :map, origin: :nodes
+  has_many :out, :nodes, type: 'connects'
 
   def self.categories
   	Category.find(node.category_ids)
@@ -13,4 +14,9 @@ class Node
   def map
   	Map.find(self.map_id)
   end
+
+  def connections
+    Node.find(self.node_ids)
+  end
+  
 end

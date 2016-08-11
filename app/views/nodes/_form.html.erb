@@ -36,6 +36,11 @@
         {multiple: true, size: @node.map.categories.count+1} %>
       </div>
 
+      <div class="field">
+        <%= f.label :nodes %>
+        <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @node.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
+      </div>
+
       <div class="actions">
         <%= f.submit %>
       </div>
@@ -46,5 +51,5 @@
   <div class="col-md-8 well">
 
   </div><!--/.col-md-8 -->
-  
+
 </div><!--/.row well -->

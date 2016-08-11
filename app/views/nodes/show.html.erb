@@ -12,10 +12,38 @@
 
 <p><strong>Categories:</strong></p>
   <% @node.categories.each do |category| %>
-	  <%= category.kind %><br>
+	  <span class="badge"><%= category.kind %></span><br>
   <% end %>
 
 <hr>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong>Linked to Nodes:</strong>
+  </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <% @node.connections.each do |node| %>
+        <tr>
+          <td><%= node.class %></td>
+          <td><%= node.try(:name) || node.try(:title) %></td>
+        </tr>
+      <% end %>  
+    </tbody>
+
+      
+     
+    </table>
+
+</div><!--/.panel -->
 
 <%= link_to 'Edit', edit_node_path(@node) %> |
 <%= link_to 'Back', nodes_path(:map_id => @node.map_id) %>

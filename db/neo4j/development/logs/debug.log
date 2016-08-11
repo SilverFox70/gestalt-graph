@@ -2494,3 +2494,14 @@ BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.Thre
 2016-08-11 17:35:54.576+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
 2016-08-11 17:37:31.569+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
 2016-08-11 17:37:31.570+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 17:40:54.649+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Starting check pointing...
+2016-08-11 17:40:54.649+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Starting store flush...
+2016-08-11 17:40:54.660+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 79 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 17:40:54.662+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 79 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Store flush completed
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Starting appending check point entry into the tx log...
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Appending check point entry into the tx log completed
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [79]:  Check pointing completed
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 17:54:03.004+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1625ms.

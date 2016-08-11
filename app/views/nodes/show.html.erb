@@ -10,10 +10,12 @@
   <%= @node.description %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @node.category %>
-</p>
+<p><strong>Categories:</strong></p>
+  <% @node.categories.each do |category| %>
+	  <%= category.kind %><br>
+  <% end %>
+
+<hr>
 
 <%= link_to 'Edit', edit_node_path(@node) %> |
 <%= link_to 'Back', nodes_path %>

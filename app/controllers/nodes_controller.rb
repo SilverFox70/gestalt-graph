@@ -5,11 +5,14 @@ class NodesController < ApplicationController
   # GET /nodes.json
   def index
     @nodes = Node.all
+    @map = Map.find("cb45e15e-e711-4cb3-b0f4-95f24d3763bd")
+    @categories = Category.find(@nodes.first.category_ids)
   end
 
   # GET /nodes/1
   # GET /nodes/1.json
   def show
+    @categories = Category.find_by(:node_id => @node.id)
   end
 
   # GET /nodes/new
@@ -71,6 +74,6 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:name, :description, :category_id)
+      params.require(:node).permit(:name, :description, :map_id, :category_ids => [])
     end
 end

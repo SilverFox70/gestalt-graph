@@ -2505,3 +2505,27 @@ BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.Thre
 2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
 2016-08-11 17:40:54.664+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
 2016-08-11 17:54:03.004+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1625ms.
+2016-08-11 18:06:35.252+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:06:35.253+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:06:40.157+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 2 unique values in sample of avg size 2 taken from index containing 2 entries
+2016-08-11 18:06:43.162+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Starting check pointing...
+2016-08-11 18:06:43.162+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Starting store flush...
+2016-08-11 18:06:43.177+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 80 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 18:06:43.179+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 80 to [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/william.brinkert/Desktop/Code/Gestalt-Graph/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Store flush completed
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Starting appending check point entry into the tx log...
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Appending check point entry into the tx log completed
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [80]:  Check pointing completed
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-08-11 18:06:43.181+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-08-11 18:08:55.512+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Map`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:55.513+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Map`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:55.554+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Node`) WHERE (n.uuid = {n_uuid}) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:55.556+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Node`) WHERE (n.uuid = {n_uuid}) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:55.593+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:55.594+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.uuid = {n_uuid}) RETURN n LIMIT {limit_1}
+2016-08-11 18:08:57.576+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`Node`) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:57.577+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`Node`) RETURN n ORDER BY n.uuid LIMIT {limit_1}
+2016-08-11 18:08:57.594+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (map2) WHERE (ID(map2) = {ID_map2}) MATCH (map2)-[rel1:`HAS_NODES`]->(result_nodes:`Node`) RETURN result_nodes
+2016-08-11 18:08:57.595+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (map2) WHERE (ID(map2) = {ID_map2}) MATCH (map2)-[rel1:`HAS_NODES`]->(result_nodes:`Node`) RETURN result_nodes
+2016-08-11 18:09:00.160+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Node(uuid) with 3 unique values in sample of avg size 3 taken from index containing 3 entries

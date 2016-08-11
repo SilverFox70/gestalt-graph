@@ -7,13 +7,36 @@
 
 <p>
   <strong>Map:</strong>
-  <%= @category.map %>
+  <%= @category.map.title %>
 </p>
 
-<p>
-  <strong>Node:</strong>
-  <%= @category.node %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong>Linked to Nodes:</strong>
+  </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <% @category.nodes.each do |node| %>
+        <tr>
+          <td><%= node.class %></td>
+          <td><%= node.try(:name) || node.try(:title) %></td>
+        </tr>
+      <% end %>  
+    </tbody>
+
+      
+     
+    </table>
+
+</div><!--/.panel -->
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Back', map_path(@category.map_id) %>

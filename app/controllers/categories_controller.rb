@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    @map = Map.find(params[:map_id])
     @category = Category.new(map_id: params[:map_id])
   end
 

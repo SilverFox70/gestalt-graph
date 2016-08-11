@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = Category.new(map_id: params[:map_id])
   end
 
   # GET /categories/1/edit
@@ -54,9 +54,10 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
+    map_id = @category.map.id
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to map_url(id: map_id ), notice: 'Category was successfully destroyed.'}
       format.json { head :no_content }
     end
   end

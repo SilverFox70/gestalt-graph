@@ -10,8 +10,7 @@ class Node
   	Category.find(node.category_ids)
   end
 
-  def map_title
-  	p "------------- getting map title --------------"
-  	Map.find(self.map_id).title
+  def map
+  	Map.find(self.map_id)
   end
 end

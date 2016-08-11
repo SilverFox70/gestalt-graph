@@ -23,7 +23,7 @@
           <tr>
             <td><%= node.name %></td>
             <td><%= node.description %></td>
-            <td><%= node.map_title %></td>
+            <td><%= link_to node.map.title, map_path(node.map) %></td>
             <td>
               <ul>
                 <% node.categories.each do |category| %>

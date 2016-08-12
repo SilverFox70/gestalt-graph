@@ -5,8 +5,8 @@ class Category
   has_one :in, :map, origin: :categories
   has_many :in, :node, origin: :categories
 
-  def self.map
-  	Map.find(category.map_id)
+  def this_map
+  	Map.find(self.map_id)
   end
 
   def name

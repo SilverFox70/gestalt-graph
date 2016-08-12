@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :nodes
+  resources :nodes do
+    get 'new_link', on: :member
+  end
   resources :maps
   get 'secrets/show'
 

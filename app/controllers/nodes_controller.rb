@@ -28,6 +28,12 @@ class NodesController < ApplicationController
     @map = Map.find(@node.map_id)
   end
 
+  def new_link
+    @map = Map.find(params[:id])
+    @nodes = Node.where(map_id: params[:id])
+    render :link_index
+  end
+
   # POST /nodes
   # POST /nodes.json
   def create

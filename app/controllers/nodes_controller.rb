@@ -19,6 +19,7 @@ class NodesController < ApplicationController
 
   # GET /nodes/new
   def new
+    @map = Map.find(params[:map_id])
     @node = Node.new(map_id: params[:map_id])
   end
 

@@ -37,8 +37,8 @@
       </div>
 
       <div class="field">
-        <%= f.label :nodes %>
-        <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @node.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
+        <%= f.label :nodes %><br>
+        <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @node.connections.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
       </div>
 
       <div class="actions">
@@ -49,7 +49,7 @@
   </div><!--/.col-md-4 -->
 
   <div class="col-md-8 well">
-
+  <%= @node.connections %>
   </div><!--/.col-md-8 -->
 
 </div><!--/.row well -->

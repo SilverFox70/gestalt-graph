@@ -11,12 +11,16 @@ class Node
   	Category.find(node.category_ids)
   end
 
-  def map
+  def node_map
   	Map.find(self.map_id)
   end
 
   def connections
-    Node.find(self.node_ids)
+    if self.node_ids.empty?
+      []
+    else
+      Node.find(self.node_ids)
+    end
   end
-  
+
 end

@@ -45,5 +45,10 @@
 <%= link_to 'New Node', new_node_path(:map_id => @map.id), class:"btn btn-default" %>
 
 <hr>
-map.categories: <%= @map.categories %>
+
 <%= render 'categories/index_by_map', {categories: @map.categories, map_title: @map.title, map_id: @map.id} %>
+
+<hr>
+
+<%= render 'nodes/rel_index', {map: @map} %>
+

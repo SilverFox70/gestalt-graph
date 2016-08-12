@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    @map = Map.find(params[:map_id])
     @category = Category.new(map_id: params[:map_id])
   end
 
@@ -70,6 +71,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:kind, :map_id, :node_id)
+      params.require(:category).permit(:kind, :map_id, :node_ids => [])
     end
 end

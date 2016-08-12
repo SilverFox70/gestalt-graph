@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @node %> |
-<%= link_to 'Back', nodes_path %>
+<%= link_to 'Back', nodes_path(:map_id => @node.map_id) %>

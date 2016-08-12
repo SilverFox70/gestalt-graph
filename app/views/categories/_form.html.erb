@@ -20,8 +20,12 @@
     <%= f.text_field :map_id %>
   </div>
   <div class="field">
-    <%= f.label :node_id %><br>
-    <%= f.text_field :node_id %>
+    <%= f.label :node%><br>
+    <% if @map.nil? %>
+      <%= f.select :node_ids, options_from_collection_for_select(@category.map.nodes.order(:name), :id, :name, @category.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @category.map.nodes.count+1} %>
+    <% else %>
+        <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @map.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -7,7 +7,11 @@
 
 <p>
   <strong>Map:</strong>
-  <%= @category.map.title %>
+  <% if @category.map.nil? %>
+    <div class="alert alert-warning">Not assigned to a map! Please follow 'Edit' path and attach to map entity.</div>
+  <% else %>
+    <%= @category.map.title %>
+  <% end %>
 </p>
 
 <div class="panel panel-default">
@@ -39,4 +43,9 @@
 </div><!--/.panel -->
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', map_path(@category.map_id) %>
+<% if @category.map_id.nil? %>
+  <%= link_to 'Back', categories_path %>
+<% else %>
+  <%= link_to 'Back', map_path(@category.map_id) %>
+<% end %>
+

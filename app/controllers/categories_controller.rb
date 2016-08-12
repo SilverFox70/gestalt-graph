@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.find(params[:id])
   end
 
   # GET /categories/new
@@ -20,6 +21,11 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    @category = Category.find(params[:id])
+    if @category.this_map.nil?
+      @unassigned = true
+      @maps = Map.where(author: current_user)
+    end
   end
 
   # POST /categories

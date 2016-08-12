@@ -48,7 +48,16 @@
                 </li>
               <% end %>
               <% node.rels(dir: :incoming, between: @node).each do |rel| %>
-                <li><%= rel.rel_type %> IN -->
+                <li><%= rel.rel_type %> IN <--
+                  <% if rel.end_node.try(:name) == node.name %>
+                    from: <%= rel.start_node.try(:name) %>
+                  <% else %>
+                    <%= rel.end_node.try(:name) %>
+                  <% end %>
+                </li>
+              <% end %>
+              <% node.rels(dir: :both, between: @node).each do |rel| %>
+                <li><%= rel.rel_type %> BOTH <-->
                   <% if rel.end_node.try(:name) == node.name %>
                     from: <%= rel.start_node.try(:name) %>
                   <% else %>

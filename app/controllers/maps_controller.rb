@@ -23,6 +23,11 @@ class MapsController < ApplicationController
   def edit
   end
 
+  def new_link
+    @map = Map.find(params[:id])
+    render "nodes/link_index"
+  end
+
   # POST /maps
   # POST /maps.json
   def create

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :categories
   resources :nodes do
+    post 'create_relationship', on: :collection
+  end
+  resources :maps do
     get 'new_link', on: :member
   end
-  resources :maps
   get 'secrets/show'
 
   # The priority is based upon order of creation: first created -> highest priority.

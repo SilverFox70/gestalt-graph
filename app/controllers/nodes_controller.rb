@@ -28,10 +28,16 @@ class NodesController < ApplicationController
     @map = Map.find(@node.map_id)
   end
 
-  def new_link
-    @map = Map.find(params[:id])
-    @nodes = Node.where(map_id: params[:id])
-    render :link_index
+  def create_relationship
+    p "---------- form params ------------"
+    p params
+    @node = Node.find(params[:start_id])
+    target_nodes = Node.find(params[:target_ids])
+    target_nodes.each do |target|
+      @node.create_rel(params[:my_rel_type], target, props = {strength: params[:strength]})
+    end
+    @node.rels.each {|r| p r.rel_type}
+    render :show
   end
 
   # POST /nodes

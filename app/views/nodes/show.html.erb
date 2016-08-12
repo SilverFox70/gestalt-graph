@@ -27,6 +27,7 @@
         <tr>
           <th>Class</th>
           <th>Name</th>
+          <th>Relationship</th>
         </tr>
       </thead>
 
@@ -35,6 +36,28 @@
         <tr>
           <td><%= node.class %></td>
           <td><%= node.try(:name) || node.try(:title) %></td>
+          <td>
+            <ul>
+              <% node.rels(dir: :outgoing, between: @node).each do |rel| %>
+                <li><%= rel.rel_type %> OUT -->
+                  <% if rel.end_node.try(:name) == node.name %>
+                    Self IN from: <%= rel.start_node.try(:name) %>
+                  <% else %>
+                    <%= rel.end_node.try(:name) %>
+                  <% end %>
+                </li>
+              <% end %>
+              <% node.rels(dir: :incoming, between: @node).each do |rel| %>
+                <li><%= rel.rel_type %> IN -->
+                  <% if rel.end_node.try(:name) == node.name %>
+                    from: <%= rel.start_node.try(:name) %>
+                  <% else %>
+                    <%= rel.end_node.try(:name) %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </td>
         </tr>
       <% end %>  
     </tbody>

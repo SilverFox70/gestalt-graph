@@ -7,7 +7,30 @@
   </div><!--/.panel-heading -->
 
   <div class="panel-body">
-    
+	  <div class="row">
+	  <%= form_tag(controller: "nodes", action: "create_relationship", method: "post") do %>
+	  	<div class="col-md-4 well">
+	  		<%= label_tag("Select ONE Start Node:") %><br>
+        <%= select_tag :start_id, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, nil), {include_blank: true} %>
+	  	</div><!--/.col-md-4 -->
+
+      <div class="col-md-4 well">
+        <%= label_tag("Relationship Type") %><br>
+        <%= text_field_tag(:my_rel_type) %><br>
+        <%= label_tag("Strength") %><br>
+        <%= number_field_tag(:strength, in: 1.0..10.0) %>
+	  	</div><!--/.col-md-4 -->
+
+	  	<div class="col-md-4 well">
+        <%= label_tag("Select ONE Start Node:") %><br>
+        <%= select_tag :target_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, nil), {multiple: true, size: @map.nodes.count} %>
+	  	</div><!--/.col-md-4 -->
+	  </div><!--/.row -->
   </div><!--/.panel-body -->
 	
+  <div class="panel-footer">
+    <%= submit_tag("Create Relationship", class:"btn btn-default") %>
+    <% end %><!-- close form -->
+  </div><!--/.panel-footer -->
+
 </div><!-- ./panel -->

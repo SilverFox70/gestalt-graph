@@ -3,4 +3,8 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @category %> |
-<%= link_to 'Back', map_path(@category.map_id) %>
+<% if @category.map_id.nil? %>
+  <%= link_to 'Back', categories_path %>
+<% else %>
+  <%= link_to 'Back', map_path(@category.map_id) %>
+<% end %>

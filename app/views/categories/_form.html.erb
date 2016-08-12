@@ -15,18 +15,33 @@
     <%= f.label :kind %><br>
     <%= f.text_field :kind %>
   </div>
-  <div class="field">
-    <%= f.label :map_id %><br>
-    <%= f.text_field :map_id %>
-  </div>
-  <div class="field">
-    <%= f.label :node%><br>
-    <% if @map.nil? %>
-      <%= f.select :node_ids, options_from_collection_for_select(@category.this_map.nodes.order(:name), :id, :name, @category.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @category.this_map.nodes.count+1} %>
-    <% else %>
-        <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @map.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
-    <% end %>
-  </div>
+
+  <% if @unassigned %>
+    <div class="alert alert-danger">You must connect this category to a Map entity!  Choose below:</div>
+    <div class="field">
+      <%= f.label :map_id %>
+      <%= f.select :map_id, options_from_collection_for_select(@maps.order(:title), :id, :title, nil) %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.label :map_id %><br>
+      <%= f.text_field :map_id %>
+    </div>
+  <% end %>
+
+  <% if @unassigned %>
+    <div class="alert alert-warning">You cannot connect this to other nodes until assigned to a Map.</div>
+  <% else %>
+    <div class="field">
+      <%= f.label :node%><br>
+      <% if @map.nil? && !@unassigned %>
+        <%= f.select :node_ids, options_from_collection_for_select(@category.this_map.nodes.order(:name), :id, :name, @category.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @category.this_map.nodes.count+1} %>
+      <% elsif @map && !@unassigned %>
+          <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @map.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -6,7 +6,11 @@ class Category
   has_many :in, :node, origin: :categories
 
   def this_map
-  	Map.find(self.map_id)
+    if self.map_id.nil?
+      nil
+    else
+    	Map.find(self.map_id)
+    end
   end
 
   def name

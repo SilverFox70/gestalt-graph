@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :nodes do
     post 'create_relationship', on: :collection
+    get 'remove_relationship', on: :member
   end
   resources :maps do
     get 'new_link', on: :member

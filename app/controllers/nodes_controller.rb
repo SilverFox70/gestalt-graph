@@ -80,6 +80,25 @@ class NodesController < ApplicationController
     end
   end
 
+  def remove_relationship
+    @node = Node.find(params[:id])
+    target_node = Node.find(params[:target_id])
+    p "----------- rel to node ------------"
+    p params[:relationship]
+    p params[:rel_id]
+    this_rel_type = params[:relationship].to_sym
+    #p @node.rel(between: target_node, dir: :both)
+    @node.rels(between: target_node).each do |rel|
+      p " rel id: #{rel.id} | param: #{params[:rel_id]}"
+      if rel.id == params[:rel_id].to_i
+        rel.del
+        p "********* deleted rel ***********"
+      end
+    end
+
+    render :show
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_node

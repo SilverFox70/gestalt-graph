@@ -45,6 +45,7 @@
                   <% else %>
                     <%= rel.end_node.try(:name) %>
                   <% end %>
+                   | <%= link_to "Remove", remove_relationship_node_path( method: :remove_relation, relationship: rel.rel_type, target_id: node.id, rel_id: rel.id) %>
                 </li>
               <% end %>
               <% node.rels(dir: :incoming, between: @node).each do |rel| %>
@@ -54,6 +55,7 @@
                   <% else %>
                     <%= rel.end_node.try(:name) %>
                   <% end %>
+                   | <%= link_to "Remove", remove_relationship_node_path( method: :remove_relation, relationship: rel.rel_type, target_id: node.id, rel_id: rel.id) %>
                 </li>
               <% end %>
               <% node.rels(dir: :both, between: @node).each do |rel| %>
@@ -63,6 +65,7 @@
                   <% else %>
                     <%= rel.end_node.try(:name) %>
                   <% end %>
+                   | <%= link_to "Remove", remove_relationship_node_path( method: :remove_relation, relationship: rel.rel_type, target_id: node.id, rel_id: rel.id) %>
                 </li>
               <% end %>
             </ul>

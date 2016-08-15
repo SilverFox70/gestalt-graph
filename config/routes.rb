@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   get 'secrets/show'
 
+  get 'graph/index'
+  get 'graph/data'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

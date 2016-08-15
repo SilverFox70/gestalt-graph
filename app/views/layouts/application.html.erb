@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Graph-based mind mapping tool">
   <meta name="author" content="William F Brinkert">
-  <meta name="viewport" content="width=device-width, initial scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Gestalt Graph</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -20,6 +20,10 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- D3.js for data-vis -->
+   <script src="https://d3js.org/d3.v3.min.js"></script> 
+   
 </head>
 <body>
   <%= render partial: "shared/nav" %>

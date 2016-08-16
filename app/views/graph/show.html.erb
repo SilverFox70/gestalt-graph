@@ -35,7 +35,7 @@ d3.json("/graph/data?map_id=" + "<%=@map.id%>" + "&format=json", function(error,
 
   // render relationships as lines
   var link = svg.selectAll(".link")
-    .data(graph, links).enter()
+    .data(graph.links).enter()
     .append("line").attr("class", "link");
 
   // render nodes as circles

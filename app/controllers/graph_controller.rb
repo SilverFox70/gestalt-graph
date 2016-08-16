@@ -12,9 +12,11 @@ def data
   @map.nodes.each do |n|
     response[:nodes] << {id: n.id, name: n.name}
     n.rels.each do |rel|
-      start = idIndex(@map.nodes, rel.start_node)
-      stop = idIndex(@map.nodes, rel.end_node)
-      response[:links] << {source: start, target: stop }
+      start = idIndex(@map.nodes, rel.start_node.id)
+      stop = idIndex(@map.nodes, rel.end_node.id)
+      if !start.nil? && !stop.nil?
+        response[:links] << {source: start, target: stop }
+      end
     end
   end
   p "------------ response -----------"
@@ -28,7 +30,7 @@ end
 private
 
 def idIndex(a, id)
-  p "--------- idINdex called ------------"
+  p "--------- idIndex called ------------"
   a.each_with_index do |node, index|
     if node.id == id
       p "------- index ---------"

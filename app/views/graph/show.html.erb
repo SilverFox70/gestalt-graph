@@ -24,13 +24,12 @@ var svg = d3.select("#graph").append("svg")
   .attr("pointer-events", "all");
 
 // load graph (nodes, links) json from /graph endpoint
-d3.json("/graph/data?map_id=" + "<%=@map.id%>", function(error, graph) {
+d3.json("/graph/data?map_id=" + "<%=@map.id%>" + "&format=json", function(error, graph) {
   if (error){ 
     console.log("error: " + error + " | graph: " + graph); 
-    console.warn(xhr.responseText)
     return;};
 
-  console.log("graph:" + graph);
+  console.log("graph.nodes:" + graph.nodes);
 
   force.nodes(graph.nodes).links(graph.links).start();
 

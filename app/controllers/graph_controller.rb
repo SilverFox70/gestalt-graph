@@ -8,19 +8,19 @@ def data
   @map = Map.find(params[:map_id])
   p "--------- @map ---------"
   p @map.nodes.to_json
-  response = { nodes: [], links: []}
+  response = { nodes: [], edges: []}
   @map.nodes.each do |n|
-    response[:nodes] << {id: n.id, name: n.name}
+    response[:nodes] << {id: n.id, name: n.name, description: n.description}
     n.rels.each do |rel|
       start = idIndex(@map.nodes, rel.start_node.id)
       stop = idIndex(@map.nodes, rel.end_node.id)
       if !start.nil? && !stop.nil?
-        response[:links] << {source: start, target: stop }
+        response[:edges] << {source: start, target: stop, type: rel.rel_type }
       end
     end
   end
   p "------------ response -----------"
-  p response.to_json
+  puts response.to_json
   respond_to do |format|
     format.html { render 'graph/show'}
     format.json { render json: response}

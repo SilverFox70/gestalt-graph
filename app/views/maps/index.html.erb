@@ -16,7 +16,7 @@
       <tbody>
         <% @maps.each do |map| %>
           <tr>
-            <td><%= link_to "#{map.title}", edit_map_path(map) %></td>
+            <td><%= link_to "#{map.title}", map %></td>
             <td><%= link_to "#{map.author.try(:username)}", edit_user_registration_path  %></td>
             <td><span class="badge"><%= map.nodes.count %></span></td>
             <td><%= link_to 'Show', map %></td>

@@ -1,8 +1,17 @@
 
 <div class="row">
 
-  <div class="col-md-3">
-    
+  <div class="col-md-3 well">
+    <% @categories.each do |node| %>
+      <%= node.name %>
+      <ul>
+        <% node.rels.each do |rel| %>
+          <li><%= rel.rel_type %><br>
+            <%= rel.start_node.try(:name) || rel.start_node.try(:title) %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div><!--/.col-md-3 -->
 
   <div class="col-md-9">
@@ -152,7 +161,6 @@
                   dy = d.target.y - d.source.y,
                   dr = (Math.sqrt(dx * dx + dy * dy))-(35*d.linknum);
                   //dr = 100 /d.linknum; 
-                  console.log("dr: " + dr + " n: " + d.type);
               return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
           });    
 

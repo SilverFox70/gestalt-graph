@@ -37,7 +37,20 @@
           .gravity(0.05)
           .start();
 
-   
+      // any edges with duplicate source and target get an incremented 'linknum'
+      for (var i = 0; i < graph.edges.length; i++){
+        if ( i != 0 &&
+             graph.edges[i].source == graph.edges[i-1].source &&
+             graph.edges[i].target == graph.edges[i-1].target){
+                  graph.edges[i].linknum = graph.edges[i-1].linknum + 1;
+            }
+        else {graph.edges[i].linknum = 1;};
+      };
+
+      // console log the linknum values
+      for (var i = 0; i < graph.edges.length; i++){
+        console.log("edge["+i+"] : " + graph.edges[i].linknum + " s: " + graph.edges[i].source.name + " t: " + graph.edges[i].target.name);
+      }
 
       var edges = svg.selectAll("line")
         .data(graph.edges)
@@ -95,7 +108,7 @@
       edgelabels.append('textPath')
           .attr('xlink:href',function(d,i) {return '#edgepath'+i})
           .style("pointer-events", "none")
-          .text(function(d,i){return 'label '+i});
+          .text(function(d,i){return d.type +' '+i});
 
 
       svg.append('defs').append('marker')
@@ -118,9 +131,10 @@
           edges.attr("d", function(d) {
               var dx = d.target.x - d.source.x,
                   dy = d.target.y - d.source.y,
-                  dr = Math.sqrt(dx * dx + dy * dy);
+                  dr = (Math.sqrt(dx * dx + dy * dy))-(35*d.linknum);
+                  //dr = 100 / d.linknum
               return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-              });
+          });
 
           nodes.attr({"cx":function(d){return d.x;},
                       "cy":function(d){return d.y;}
@@ -129,9 +143,18 @@
           nodelabels.attr("x", function(d) { return d.x; }) 
                     .attr("y", function(d) { return d.y; });
 
-          edgepaths.attr('d', function(d) { var path='M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y;
-                                             //console.log(d)
-                                             return path});       
+          // edgepaths.attr('d', function(d) { var path='M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y;
+          //                                    //console.log(d)
+          //                                    return path});  
+
+          edgepaths.attr("d", function(d) {
+              var dx = d.target.x - d.source.x,
+                  dy = d.target.y - d.source.y,
+                  dr = (Math.sqrt(dx * dx + dy * dy))-(35*d.linknum);
+                  //dr = 100 /d.linknum; 
+                  console.log("dr: " + dr + " n: " + d.type);
+              return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+          });    
 
           edgelabels.attr('transform',function(d,i){
               if (d.target.x<d.source.x){
@@ -144,7 +167,12 @@
                   return 'rotate(0)';
                   }
           });
-      });
+
+          // edgelabels.attr("transform", function(d) {
+          //     return "translate(" + (d.source.x + d.target.x) / 2 + "," 
+          //     + (d.source.y + d.target.y) / 2 + ")"; });
+
+          }); // close force function call
 
     }); //close d3.json call
 

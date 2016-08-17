@@ -19,28 +19,7 @@
 
     var colors = d3.scale.category10();
 
-    var graph = {"nodes":[
-        {"id":"3882c8b9-a186-4545-8420-a47718212012","name":"Primary Node","description":"The first node of this graph"},
-        {"id":"0b3f88e6-e8be-4189-9c53-769ea1482342","name":"Secondary Node","description":"The second node of this graph"},
-        {"id":"881475f3-6213-479b-b8f6-02fde0a547cc","name":"Third Node","description":"Yet another test node"}
-        ],
-        "edges":[
-        {"source":0,"target":2,"type":"connects"},
-        {"source":0,"target":1,"type":"connects"},
-        {"source":0,"target":1,"type":"Affinity"},
-        {"source":0,"target":1,"type":"Affinity"},
-        {"source":2,"target":0,"type":"connects"},
-        {"source":0,"target":1,"type":"connects"},
-        {"source":1,"target":2,"type":"Dichotomty"},
-        {"source":0,"target":1,"type":"Affinity"},
-        {"source":0,"target":1,"type":"Affinity"},
-        {"source":1,"target":2,"type":"connects"},
-        {"source":0,"target":2,"type":"connects"},
-        {"source":1,"target":2,"type":"Dichotomty"},
-        {"source":1,"target":2,"type":"connects"},
-        {"source":2,"target":0,"type":"connects"}
-        ]};
-
+    // get data as json from back end and put into graph object
     d3.json("/graph/data?map_id=" + "<%=@map.id%>" + "&format=json", function(error, graph) {
       if (error){ 
         console.log("error: " + error + " | graph: " + graph); 
@@ -63,7 +42,7 @@
       var edges = svg.selectAll("line")
         .data(graph.edges)
         .enter()
-        .append("line")
+        .append("path")
         .attr("id",function(d,i) {return 'edge'+i})
         .attr('marker-end','url(#arrowhead)')
         .style("stroke","#ccc")

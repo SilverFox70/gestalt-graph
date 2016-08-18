@@ -23,7 +23,7 @@
 
   var w = width;
     var h = 700;
-    var linkDistance=200;
+    var linkDistance=150;
 
     var colors = d3.scale.category10();
 
@@ -35,16 +35,6 @@
  
       var svg = d3.select("#svg-container").append("svg").attr({"width":w,"height":h});
 
-      var force = d3.layout.force()
-          .nodes(graph.nodes)
-          .links(graph.edges)
-          .size([w,h])
-          .linkDistance([linkDistance])
-          .charge([-500])
-          .theta(0.1)
-          .gravity(0.05)
-          .start();
-
       // any edges with duplicate source and target get an incremented 'linknum'
       for (var i = 0; i < graph.edges.length; i++){
         if ( i != 0 &&
@@ -54,6 +44,21 @@
             }
         else {graph.edges[i].linknum = 1;};
       };
+
+      var force = d3.layout.force()
+          .nodes(graph.nodes)
+          .links(graph.edges)
+          .size([w,h])
+          .linkDistance([linkDistance])
+          .linkStrength(function(d){
+            console.log("linkStrength: " + (1/d.linknum) );
+            return (1/d.linknum)})
+          .charge([-500])
+          .theta(0.1)
+          .gravity(0.05)
+          .start();
+
+     
 
       // console log the linknum values
       for (var i = 0; i < graph.edges.length; i++){

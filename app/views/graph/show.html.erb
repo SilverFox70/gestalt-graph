@@ -2,15 +2,11 @@
 <div class="row">
 
   <div class="col-md-12 well">
-    <h3><%= @map.title %></h3>
-    <strong>Nodes:</strong><br>
-    <% @map.nodes.each do |node| %>
-      <span class="badge"><%= node.name %></span>
-    <% end %>
-    <% @categories.each do |node| %>
-      <span class="badge" style="background-color:orange"><%= node.name %></span>
-    <% end %>
-    <br>
+    <span class="h3"><%= @map.title %>  </span>
+    <strong>Nodes:</strong>
+    <span class="badge"><%= @map.nodes.count %></span> |
+    Categories:
+    <span class="badge"><%= @categories.count %></span> |
     <%= link_to "Back", map_path(@map), class:"btn btn-default" %>
   </div><!--/.col-md-12 -->
 
@@ -26,7 +22,7 @@
   console.log("jq width says: " + width);
 
   var w = width;
-    var h = 600;
+    var h = 700;
     var linkDistance=200;
 
     var colors = d3.scale.category10();

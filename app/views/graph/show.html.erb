@@ -1,31 +1,29 @@
 
 <div class="row">
 
-  <div class="col-md-3 well">
-    <% @categories.each do |node| %>
-      <%= node.name %>
-      <ul>
-        <% node.rels.each do |rel| %>
-          <li><%= rel.rel_type %><br>
-            <%= rel.start_node.try(:name) || rel.start_node.try(:title) %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div><!--/.col-md-3 -->
-
-  <div class="col-md-9">
-  </div><!--/.col-md-9 -->
+  <div class="col-md-12 well">
+    <span class="h3"><%= @map.title %>  </span>
+    <strong>Nodes:</strong>
+    <span class="badge"><%= @map.nodes.count %></span> |
+    Categories:
+    <span class="badge"><%= @categories.count %></span> |
+    <%= link_to "Back", map_path(@map), class:"btn btn-default" %>
+  </div><!--/.col-md-12 -->
 
 </div><!--/.row -->
 
+<div class="row">
+  <div id="svg-container" class="col-md-12" style="height=800px">
+  </div><!--/.col-md-12 -->
+</div><!--/.row -->
+
 <script type="text/javascript">
-  width = $(".col-md-9").width()
+  width = $("#svg-container").width()
   console.log("jq width says: " + width);
 
   var w = width;
-    var h = 600;
-    var linkDistance=200;
+    var h = 700;
+    var linkDistance=150;
 
     var colors = d3.scale.category10();
 
@@ -35,17 +33,7 @@
         console.log("error: " + error + " | graph: " + graph); 
         return;};
  
-      var svg = d3.select(".col-md-9").append("svg").attr({"width":w,"height":h});
-
-      var force = d3.layout.force()
-          .nodes(graph.nodes)
-          .links(graph.edges)
-          .size([w,h])
-          .linkDistance([linkDistance])
-          .charge([-500])
-          .theta(0.1)
-          .gravity(0.05)
-          .start();
+      var svg = d3.select("#svg-container").append("svg").attr({"width":w,"height":h});
 
       // any edges with duplicate source and target get an incremented 'linknum'
       for (var i = 0; i < graph.edges.length; i++){
@@ -56,6 +44,21 @@
             }
         else {graph.edges[i].linknum = 1;};
       };
+
+      var force = d3.layout.force()
+          .nodes(graph.nodes)
+          .links(graph.edges)
+          .size([w,h])
+          .linkDistance([linkDistance])
+          .linkStrength(function(d){
+            console.log("linkStrength: " + (1/d.linknum) );
+            return (1/d.linknum)})
+          .charge([-500])
+          .theta(0.1)
+          .gravity(0.05)
+          .start();
+
+     
 
       // console log the linknum values
       for (var i = 0; i < graph.edges.length; i++){

@@ -24,8 +24,7 @@
     </div>
   <% else %>
     <div class="field">
-      <%= f.label :map_id %><br>
-      <%= f.text_field :map_id %>
+      <%= f.hidden_field :map_id %>
     </div>
   <% end %>
 
@@ -35,9 +34,9 @@
     <div class="field">
       <%= f.label :node%><br>
       <% if @map.nil? && !@unassigned %>
-        <%= f.select :node_ids, options_from_collection_for_select(@category.this_map.nodes.order(:name), :id, :name, @category.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @category.this_map.nodes.count+1} %>
+        <%= f.select :node_ids, options_from_collection_for_select(@category.this_map.nodes.order(:name), :id, :name, @category.connections.map(&:id)), {include_blank: true}, {multiple: true, size: @category.this_map.nodes.count+1} %>
       <% elsif @map && !@unassigned %>
-          <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @map.nodes.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
+          <%= f.select :node_ids, options_from_collection_for_select(@map.nodes.order(:name), :id, :name, @category.connections.map(&:id)), {include_blank: true}, {multiple: true, size: @map.nodes.count+1} %>
       <% end %>
     </div>
   <% end %>

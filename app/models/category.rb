@@ -1,6 +1,8 @@
 class Category 
   include Neo4j::ActiveNode
   property :kind, type: String
+  property :create_at#, type: DateTime
+  property :updated_at#, type: DateTime
 
   has_one :in, :map, origin: :categories
   has_many :in, :node, origin: :categories

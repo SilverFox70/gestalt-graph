@@ -19,4 +19,12 @@ class Category
   	self.kind
   end
 
+  def connections
+    if self.node_ids.empty?
+      []
+    else
+      Category.find(self.node_ids)
+    end
+  end
+
 end

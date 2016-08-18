@@ -21,7 +21,7 @@
       <tbody>
         <% @map.nodes.each do |node| %>
           <tr>
-            <td><%= node.name %></td>
+            <td><%= link_to "#{node.name}", node %></td>
             <td><%= node.description %></td>
             <td>
               <ul>

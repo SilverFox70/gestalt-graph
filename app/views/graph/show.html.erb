@@ -1,26 +1,28 @@
 
 <div class="row">
 
-  <div class="col-md-3 well">
-    <% @categories.each do |node| %>
-      <%= node.name %>
-      <ul>
-        <% node.rels.each do |rel| %>
-          <li><%= rel.rel_type %><br>
-            <%= rel.start_node.try(:name) || rel.start_node.try(:title) %>
-          </li>
-        <% end %>
-      </ul>
+  <div class="col-md-12 well">
+    <h3><%= @map.title %></h3>
+    <strong>Nodes:</strong><br>
+    <% @map.nodes.each do |node| %>
+      <span class="badge"><%= node.name %></span>
     <% end %>
-  </div><!--/.col-md-3 -->
-
-  <div class="col-md-9">
-  </div><!--/.col-md-9 -->
+    <% @categories.each do |node| %>
+      <span class="badge" style="background-color:orange"><%= node.name %></span>
+    <% end %>
+    <br>
+    <%= link_to "Back", map_path(@map), class:"btn btn-default" %>
+  </div><!--/.col-md-12 -->
 
 </div><!--/.row -->
 
+<div class="row">
+  <div id="svg-container" class="col-md-12" style="height=800px">
+  </div><!--/.col-md-12 -->
+</div><!--/.row -->
+
 <script type="text/javascript">
-  width = $(".col-md-9").width()
+  width = $("#svg-container").width()
   console.log("jq width says: " + width);
 
   var w = width;
@@ -35,7 +37,7 @@
         console.log("error: " + error + " | graph: " + graph); 
         return;};
  
-      var svg = d3.select(".col-md-9").append("svg").attr({"width":w,"height":h});
+      var svg = d3.select("#svg-container").append("svg").attr({"width":w,"height":h});
 
       var force = d3.layout.force()
           .nodes(graph.nodes)

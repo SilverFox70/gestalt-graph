@@ -2,6 +2,8 @@ class Node
   include Neo4j::ActiveNode
   property :name, type: String
   property :description, type: String
+  property :create_at#, type: DateTime
+  property :updated_at#, type: DateTime
 
   has_many :out, :categories, type: :HAS_CATEGORY
   has_one :in, :map, origin: :nodes

@@ -1,19 +1,29 @@
 
 <div class="row">
 
-  <div class="col-md-3">
-    
+  <div class="col-md-3 well">
+    <% @categories.each do |node| %>
+      <%= node.name %>
+      <ul>
+        <% node.rels.each do |rel| %>
+          <li><%= rel.rel_type %><br>
+            <%= rel.start_node.try(:name) || rel.start_node.try(:title) %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div><!--/.col-md-3 -->
 
   <div class="col-md-9">
-    <svg id="graph"></svg>
   </div><!--/.col-md-9 -->
 
 </div><!--/.row -->
 
 <script type="text/javascript">
-  
-  var w = 1000;
+  width = $(".col-md-9").width()
+  console.log("jq width says: " + width);
+
+  var w = width;
     var h = 600;
     var linkDistance=200;
 
@@ -25,7 +35,7 @@
         console.log("error: " + error + " | graph: " + graph); 
         return;};
  
-      var svg = d3.select("body").append("svg").attr({"width":w,"height":h});
+      var svg = d3.select(".col-md-9").append("svg").attr({"width":w,"height":h});
 
       var force = d3.layout.force()
           .nodes(graph.nodes)
@@ -152,7 +162,6 @@
                   dy = d.target.y - d.source.y,
                   dr = (Math.sqrt(dx * dx + dy * dy))-(35*d.linknum);
                   //dr = 100 /d.linknum; 
-                  console.log("dr: " + dr + " n: " + d.type);
               return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
           });    
 

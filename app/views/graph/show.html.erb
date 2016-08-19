@@ -91,7 +91,7 @@
         .attr("class", "node")
         .attr("id", function(d,i){return "n-index-" + i})
         .style("fill",function(d,i){return colors(i);})
-        .on("click", function(d,i){logIt(d,i)})
+        .on("click", function(d,i){createHighlight(d,i)})
         .call(force.drag);
 
       // string of html to be inserted for node info
@@ -104,9 +104,17 @@
       };
 
       // higlight current selected node using 'i' as index and un-highlight any other selected nodes based on class 'node-selected'
-      var highlightNode = function(i){
+      var highlightNode = function(i, color){
         $(".node-selected").css("stroke", "gray").removeClass("node-selected");
-        $("#n-index-"+i).css("stroke", "orange").attr("class", "node-selected");
+        $("#n-index-"+i).css("stroke", color).addClass("node-selected");
+      };
+
+      // TODO: change up how nodes are unselected
+      // highlightconnected nodes
+      var highlightNodes = function(cni, color){
+        for (var i = 0; i < cni.length; i++){
+          highlightNode(cni[i], color);
+        };
       };
 
       // find all edges with a source or target equal to the current node
@@ -122,6 +130,23 @@
         return connectedEdges;
       };
 
+      // TODO: make this store connected node indexes in array again
+      // find all nodes connected to 'rootNode' via edges
+      var hasConnectedNodes = function(rootNode, edges){
+        connectedNodes = []
+        for (var i = 0; i < edges.length; i++){
+          startNode = graph.edges[edges[i]].source;
+          endNode = graph.edges[edges[i]].target;
+          if (rootNode != startNode){
+            highlightNode(startNode.index, "orange");
+          } else if (rootNode != endNode){
+            highlightNode(endNode.index, "yellow");
+          };
+        };
+        console.log("conNode: " + JSON.stringify(connectedNodes));
+        return connectedNodes;
+      };
+
       // take the index of connected edges and highlight path and text
       var highlightEdges= function(elist){
         $(".label-highlighted").css("fill", "#aaa").removeClass("label-highlighted");
@@ -132,11 +157,15 @@
         };
       };
 
-      // show the node that was clicked on
-      var logIt = function(d,i){
+      // show the node and connections that was clicked on
+      var createHighlight = function(d,i){
+        primeColor = "red";
+        secondaryColor = "orange";
         connections = hasConnectedEdges(d);
         highlightEdges(connections);
-        highlightNode(i);
+        highlightNode(i, primeColor);
+        connectedNodes = hasConnectedNodes(d, connections);
+        //highlightNodes(connectedNodes, secondaryColor);
         $(".node-info").replaceWith(nodeInfo(d));
         return console.log("clicked node: " + d.name + " index: " + i);
       };

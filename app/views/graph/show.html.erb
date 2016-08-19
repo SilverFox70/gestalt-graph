@@ -103,13 +103,42 @@
         return str;
       };
 
+      // higlight current selected node using 'i' as index and un-highlight any other selected nodes based on class 'node-selected'
+      var highlightNode = function(i){
+        $(".node-selected").css("stroke", "gray").removeClass("node-selected");
+        $("#n-index-"+i).css("stroke", "orange").attr("class", "node-selected");
+      };
+
+      // find all edges with a source or target equal to the current node
+      var hasConnectedEdges = function(node){
+        var edges = graph.edges
+        connectedEdges = [];
+        for (var i = 0; i < edges.length; i++ ){
+          if ((edges[i].source === node) ||
+              (edges[i].target === node)){
+            connectedEdges.push(i);
+          };
+        };
+        return connectedEdges;
+      };
+
+      // take the index of connected edges and highlight path and text
+      var highlightEdges= function(elist){
+        $(".label-highlighted").css("fill", "#aaa").removeClass("label-highlighted");
+        $(".edge-highlighted").css("stroke", "gray").removeClass("edge-highlighted");
+        for (var i = 0; i < elist.length; i++){
+          $("#edgelabel"+elist[i]).css("fill", "black").addClass("label-highlighted");
+          $("#edge"+elist[i]).css("stroke", "black").addClass("edge-highlighted");
+        };
+      };
+
       // show the node that was clicked on
       var logIt = function(d,i){
-        $(".node-selected").css("stroke", "gray");
-        $("#n-index-"+i).css("stroke", "orange").attr("class", "node-selected");
+        connections = hasConnectedEdges(d);
+        highlightEdges(connections);
+        highlightNode(i);
         $(".node-info").replaceWith(nodeInfo(d));
         return console.log("clicked node: " + d.name + " index: " + i);
-
       };
 
       var nodelabels = svg.selectAll(".nodelabel") 

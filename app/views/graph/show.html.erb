@@ -1,13 +1,19 @@
 
-<div class="row">
+<div class="row" id="r-1">
 
   <div class="col-md-12 well">
-    <span class="h3"><%= @map.title %>  </span>
-    <strong>Nodes:</strong>
-    <span class="badge"><%= @map.nodes.count %></span> |
-    Categories:
-    <span class="badge"><%= @categories.count %></span> |
-    <%= link_to "Back", map_path(@map), class:"btn btn-default" %>
+    <div class="row-left">
+      <span class="h3"><%= @map.title %>  </span>
+      <strong>Nodes:</strong>
+      <span class="badge"><%= @map.nodes.count %></span> |
+      Categories:
+      <span class="badge"><%= @categories.count %></span> |
+      <%= link_to "Back", map_path(@map), class:"btn btn-default" %>
+    </div><!--/.row-left -->
+
+    <div class="node-info">
+    </div>
+
   </div><!--/.col-md-12 -->
 
 </div><!--/.row -->
@@ -53,7 +59,7 @@
           .linkStrength(function(d){
             console.log("linkStrength: " + (1/d.linknum) );
             return (1/d.linknum)})
-          .charge([-500])
+          .charge([-700])
           .theta(0.1)
           .gravity(0.05)
           .start();
@@ -80,8 +86,31 @@
         .enter()
         .append("circle")
         .attr({"r":15})
+        .attr("stroke", "gray")
+        .attr("stroke-width", 2)
+        .attr("class", "node")
+        .attr("id", function(d,i){return "n-index-" + i})
         .style("fill",function(d,i){return colors(i);})
+        .on("click", function(d,i){logIt(d,i)})
         .call(force.drag);
+
+      // string of html to be inserted for node info
+      var nodeInfo = function(node){
+        str = "<div class='node-info'><strong>Current Node:</strong> " +
+              node.name + ",<strong> description:</strong> " +
+              node.description + ", <strong>uuid: </strong> " +
+              node.id;
+        return str;
+      };
+
+      // show the node that was clicked on
+      var logIt = function(d,i){
+        $(".node-selected").css("stroke", "gray");
+        $("#n-index-"+i).css("stroke", "orange").attr("class", "node-selected");
+        $(".node-info").replaceWith(nodeInfo(d));
+        return console.log("clicked node: " + d.name + " index: " + i);
+
+      };
 
       var nodelabels = svg.selectAll(".nodelabel") 
          .data(graph.nodes)
@@ -90,6 +119,8 @@
          .attr({"x":function(d){return d.x;},
                 "y":function(d){return d.y;},
                 "class":"nodelabel",
+                "id": function(d,i){return "n-label-index-" + i},
+                "font-size":10,
                 "stroke":"black"})
          .text(function(d){return d.name;});
 

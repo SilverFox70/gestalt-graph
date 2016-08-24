@@ -23,9 +23,9 @@
   </div><!--/.col-md-12 -->
 </div><!--/.row -->
 
+<!-- Below is the D3 code for visualization of the graph -->
 <script type="text/javascript">
   width = $("#svg-container").width()
-  console.log("jq width says: " + width);
 
   var w = width;
     var h = 700;
@@ -110,8 +110,7 @@
         $("#n-index-"+i).css("stroke", color).addClass("node-selected");
       };
 
-      // TODO: change up how nodes are unselected
-      // highlightconnected nodes
+      // highlightconnected nodes: similar to highlightNode
       var highlightNodes = function(nodes, color){
         $(".m-node-selected").css("stroke", "gray").removeClass("m-node-selected");
         for (var i = 0; i < nodes.length; i++){
@@ -132,7 +131,6 @@
         return connectedEdges;
       };
 
-      // TODO: make this store connected node indexes in array again
       // find all nodes connected to 'rootNode' via edges
       var hasConnectedNodes = function(rootNode, edges){
         connectedNodes = []
@@ -271,6 +269,7 @@
                   }
           });
 
+          // Code below is for straight line labels between nodes
           // edgelabels.attr("transform", function(d) {
           //     return "translate(" + (d.source.x + d.target.x) / 2 + "," 
           //     + (d.source.y + d.target.y) / 2 + ")"; });

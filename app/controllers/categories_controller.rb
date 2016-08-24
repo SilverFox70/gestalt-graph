@@ -20,6 +20,10 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1/edit
+  ##
+  # If by some chance a category type node is not associated
+  # with a map, we note this and then force the user to assign
+  # it to a map when they edit it.
   def edit
     @category = Category.find(params[:id])
     if @category.this_map.nil?

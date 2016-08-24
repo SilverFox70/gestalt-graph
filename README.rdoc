@@ -1,15 +1,15 @@
-== A Starter Using Rails, Devise, and Neo4j
+== A Graph Based MindMap using Rails, Devise, and Neo4j
 
 * Ruby version 2.3.1
 * Rails version 4.2.6
 * Neo4j - community latest is accessed
 
-This is a very simple app that demonstrates using Devise via the 'devise-neo4j' gem.
-What you see here is what you get if you follow the sample app instructions at
-https://github.com/neo4jrb/devise-neo4j
+This is a very simple app that demonstrates a basic mindmap as a graph
+with a basic visualization tool. This has become more of a "proof of
+concept" than an actual MVP. I hope to continue to iterate on this in the future, but for now it provides a way to input and display graph relationships between nodes.
 
-If you rather try to use this repo as a starting point for a project, then:
-* clone or copy the repo <tt>git clone https://github.com/SilverFox70/rails_neo4j_and_devise.git</tt>
+To try this out for yourself:
+* clone or copy the repo <tt>git clone https://github.com/SilverFox70/gestalt-graph.git</tt>
 * <tt>bundle</tt>
 * <tt>rake neo4j:install[community-latest]</tt>
 * <tt>rake neo4j:start</tt>
@@ -17,16 +17,22 @@ If you rather try to use this repo as a starting point for a project, then:
 
 Visit <tt>localhost:7474</tt> to see the Neo4j browser/dashboard
 
-Visit <tt>localhost:3000</tt> to test your login/sign up.
+Visit <tt>localhost:3000</tt> to test login/sign up.
 
 As a helpful reminder, to avoid future frustration whenever you are using Neo4j,
-always be sure to also shut down the Neo4j server when you exit out of rails.
+always be sure to also shut down the Neo4j server when you exit out of rails. I have noticed that if you fail to do this and the computer crashes, you might lose the data in your neo4j graph.
 
 <tt>rake neo4j:stop</tt>
 
-=== Building an app from here
+=== How to use this app
 
-Scaffolding is a quick way to generate resources:
+Login or sign up, and select "create map". Go into your map and you will see options to add a new node. You can also create "categories". You can edit nodes and their relationships quite easily, although to "see" what you have done, you will want to "View Graph". Currently the D3 based force layout is pretty bare bones, and you might honestly be better served by viewing your graph at localhost:7474 via the Neo4j browswer.
+
+=== Building an app from here...
+
+Scaffolding is a quick way to generate resources if you would like to use
+the underlying visualization and interface to the graph database for some 
+specific purpose:
 
 <tt>rails g scaffold Post title:string body:string</tt>
 

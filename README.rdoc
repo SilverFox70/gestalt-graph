@@ -28,6 +28,8 @@ always be sure to also shut down the Neo4j server when you exit out of rails. I 
 
 Login or sign up, and select "create map". Go into your map and you will see options to add a new node. You can also create "categories". You can edit nodes and their relationships quite easily, although to "see" what you have done, you will want to "View Graph". Currently the D3 based force layout is pretty bare bones, and you might honestly be better served by viewing your graph at localhost:7474 via the Neo4j browswer.
 
+A note on "security": There are very few checks for authorization/authentication along the various routes.  I didn't need them for the purposes of development, but you might if you start building something new off of this.
+
 === Building an app from here...
 
 Scaffolding is a quick way to generate resources if you would like to use

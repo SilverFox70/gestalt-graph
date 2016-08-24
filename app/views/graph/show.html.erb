@@ -51,6 +51,7 @@
         else {graph.edges[i].linknum = 1;};
       };
 
+      // set up and start the force layout
       var force = d3.layout.force()
           .nodes(graph.nodes)
           .links(graph.edges)
@@ -66,7 +67,7 @@
 
      
 
-      // console log the linknum values
+      // for debuggin only: console log the linknum values
       for (var i = 0; i < graph.edges.length; i++){
         console.log("edge["+i+"] : " + graph.edges[i].linknum + " s: " + graph.edges[i].source.name + " t: " + graph.edges[i].target.name);
       }
@@ -111,9 +112,10 @@
 
       // TODO: change up how nodes are unselected
       // highlightconnected nodes
-      var highlightNodes = function(cni, color){
-        for (var i = 0; i < cni.length; i++){
-          highlightNode(cni[i], color);
+      var highlightNodes = function(nodes, color){
+        $(".m-node-selected").css("stroke", "gray").removeClass("m-node-selected");
+        for (var i = 0; i < nodes.length; i++){
+          $("#n-index-"+nodes[i]).css("stroke", color).addClass("m-node-selected");
         };
       };
 
@@ -137,10 +139,10 @@
         for (var i = 0; i < edges.length; i++){
           startNode = graph.edges[edges[i]].source;
           endNode = graph.edges[edges[i]].target;
-          if (rootNode != startNode){
-            highlightNode(startNode.index, "orange");
-          } else if (rootNode != endNode){
-            highlightNode(endNode.index, "yellow");
+          if (rootNode != startNode && !connectedNodes.includes(startNode)){
+            connectedNodes.push(startNode.index);
+          } else if (rootNode != endNode && !connectedNodes.includes(endNode)){
+            connectedNodes.push(endNode.index);
           };
         };
         console.log("conNode: " + JSON.stringify(connectedNodes));
@@ -165,7 +167,7 @@
         highlightEdges(connections);
         highlightNode(i, primeColor);
         connectedNodes = hasConnectedNodes(d, connections);
-        //highlightNodes(connectedNodes, secondaryColor);
+        highlightNodes(connectedNodes, secondaryColor);
         $(".node-info").replaceWith(nodeInfo(d));
         return console.log("clicked node: " + d.name + " index: " + i);
       };
